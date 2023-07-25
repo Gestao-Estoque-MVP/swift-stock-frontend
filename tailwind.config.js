@@ -43,6 +43,15 @@ module.exports = {
         text: '#6A6A6A',
       },
     },
+    animation: {
+      showMenu: 'showMenu .3s forwards',
+    },
+    keyframes: {
+      showMenu: {
+        from: { right: '-50px', opacity: '0' },
+        to: { right: '0', opacity: '1' },
+      },
+    },
   },
   plugins: [],
 };

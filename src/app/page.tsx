@@ -1,4 +1,4 @@
-import Header from "@/components/Home/Header"
+import Header from "@/components/Home/Header/Header"
 
 const HomePage = () => {
   return <h1 className="text-brand-400">
