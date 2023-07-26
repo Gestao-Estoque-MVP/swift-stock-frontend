@@ -1,5 +1,14 @@
+import Footer from "@/components/Home/Footer/Footer";
+import Header from "@/components/Home/Header/Header";
+
 const HomePage = () => {
-  return <h1 className="text-brand-400">Home Page</h1>
+  return (
+    <>
+      <Header/>
+      <main></main>
+      <Footer/>
+    </>
+  )
 }
 
 export default HomePage
