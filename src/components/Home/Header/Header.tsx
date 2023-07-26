@@ -5,18 +5,34 @@ import Link from "next/link"
 import {BiMenu} from 'react-icons/bi'
 import MenuMobile from "./MenuMobile"
 import logoWhiteSvg from "../../../assets/logo-white.svg"
-import React from "react"
+import React, { useEffect } from "react"
 
 const Header = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const [scrollY, setScrollY] = React.useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   function handleModal() {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
+
 
   return (
     <>
-    <header className="py-8 px-5 flex items-center justify-between bg-brand-100 lg:px-16">
+    <header className={`py-8 fixed top-0 w-full z-10 px-5 flex items-center justify-between lg:px-16 ${scrollY > 600 ? "bg-brand-400" : ""} transition-all duration-200`}>
       <Link href={'/'}><Image src={logoWhiteSvg} alt="Logo da SwiftStock" className=" w-36 lg:w-auto"/></Link>
 
       <nav className="flex items-center gap-9 text-white-primary text-base capitalize font-default-font">

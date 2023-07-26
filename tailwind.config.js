@@ -36,8 +36,8 @@ module.exports = {
         400: '#881D14',
       },
       white: {
-        primary: '#EDEDED',
-        bg: '#E4E4E4',
+        primary: '#E4E4E4',
+        total: "FFFFFF"
       },
       grey: {
         text: '#6A6A6A',
