@@ -37,10 +37,12 @@ module.exports = {
       },
       white: {
         primary: '#E4E4E4',
-        total: "FFFFFF"
+        total: '#FFFFFF'
       },
       grey: {
-        text: '#6A6A6A',
+        100: '#9A9A9A',
+        200: '#6A6A6A',
+        300: '#4E4E4E',
       },
     },
     animation: {
