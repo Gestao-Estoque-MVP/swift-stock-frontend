@@ -1,9 +1,10 @@
 import Header from "@/components/Home/Header/Header"
 
 const HomePage = () => {
-  return <h1 className="text-brand-400">
+  return <>
     <Header/>
-  </h1>
+    <main></main>
+  </>
 }
 
 export default HomePage
