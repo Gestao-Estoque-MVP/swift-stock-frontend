@@ -4,9 +4,9 @@ import Header from "@/components/Home/Header/Header";
 const HomePage = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <main></main>
-      <Footer/>
+      <Footer />
     </>
   )
 }
