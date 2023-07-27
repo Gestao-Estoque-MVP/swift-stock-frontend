@@ -1,6 +1,5 @@
 import Container from "@/components/Container/Container";
 import SocialMediaLinks from "../SocialMediaLinks/SocialMediaLinks";
-import Link from "next/link";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Heading = () => {
@@ -16,7 +15,7 @@ const Heading = () => {
                 <a href={"#about"} className="animate-bounce pt-10">
                     <AiOutlineArrowUp className="rotate-180 w-6 h-6"/>
                 </a>
-                <nav className="absolute bottom-0 left-0 pb-10 pl-5 w-full flex justify-center md:justify-start">
+                <nav className="absolute bottom-0 left-0 pb-10 w-full flex justify-center md:justify-start">
                     <SocialMediaLinks bigger={true}/>
                 </nav>
             </Container>
