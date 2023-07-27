@@ -6,10 +6,16 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    extend: {
+      backgroundImage: {
+        headingGradient: "radial-gradient(circle, #E4E4E4, #9AAFFF)"
+      },
+    },
     fontFamily: {
       'default-font': ['Montserrat', 'sans-serif'],
     },
     colors: {
+      transparent: "transparent",
       brand: {
         100: '#3B79FF',
         200: '#3026DC',
@@ -36,21 +42,38 @@ module.exports = {
         400: '#881D14',
       },
       white: {
-        primary: '#EDEDED',
-        bg: '#E4E4E4',
+        primary: '#E4E4E4',
+        total: '#FFFFFF',
       },
       grey: {
-        text: '#6A6A6A',
+        100: '#9A9A9A',
+        200: '#6A6A6A',
+        300: '#4E4E4E',
       },
     },
     animation: {
       showMenu: 'showMenu .3s forwards',
+      bounce: 'bounce 2s ease infinite',
     },
     keyframes: {
       showMenu: {
         from: { right: '-50px', opacity: '0' },
         to: { right: '0', opacity: '1' },
       },
+      bounce: {
+        "0%": {
+          transform: "translateY(0)",
+          opacity: 0.8
+        },
+        "50%": { 
+          transform: "translateY(-10px)",
+          opacity: 0.6
+        },
+        "100%": {
+          transform: "translateY(0)",
+          opacity: 0.8
+        }
+      }
     },
   },
   plugins: [],
