@@ -10,6 +10,7 @@ module.exports = {
       'default-font': ['Montserrat', 'sans-serif'],
     },
     colors: {
+      transparent: "transparent",
       brand: {
         100: '#3B79FF',
         200: '#3026DC',
@@ -37,7 +38,7 @@ module.exports = {
       },
       white: {
         primary: '#E4E4E4',
-        total: '#FFFFFF'
+        total: '#FFFFFF',
       },
       grey: {
         100: '#9A9A9A',
@@ -47,12 +48,27 @@ module.exports = {
     },
     animation: {
       showMenu: 'showMenu .3s forwards',
+      bounce: 'bounce 2s ease infinite',
     },
     keyframes: {
       showMenu: {
         from: { right: '-50px', opacity: '0' },
         to: { right: '0', opacity: '1' },
       },
+      bounce: {
+        "0%": {
+          transform: "translateY(0)",
+          opacity: 0.8
+        },
+        "50%": { 
+          transform: "translateY(-10px)",
+          opacity: 0.6
+        },
+        "100%": {
+          transform: "translateY(0)",
+          opacity: 0.8
+        }
+      }
     },
   },
   plugins: [],

@@ -4,19 +4,24 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 
-const SocialMediaLinks = () => {
+
+interface ISocialMediaLinksProps{
+    bigger?: boolean
+}
+
+const SocialMediaLinks = ({bigger}: ISocialMediaLinksProps) => {
     return(
-        <div className="flex justify-center md:justify-end items-center gap-4">
+        <div className="flex justify-center md:justify-end items-center gap-6">
             <Link href="" className="transition-all ease-in duration-75 hover:-translate-y-1">
-                <RiWhatsappFill className="w-5 h-5"/>
+                <RiWhatsappFill className={`${bigger ? "w-6 h-6" : "w-5 h-5"}`}/>
             </Link>
 
             <Link href="" className="transition-all ease-in duration-75 hover:-translate-y-1">
-                <FaLinkedin className="w-5 h-5"/>
+                <FaLinkedin className={`${bigger ? "w-6 h-6" : "w-5 h-5"}`}/>
             </Link>
 
             <Link href="" className="transition-all ease-in duration-75 hover:-translate-y-1">
-                <PiInstagramLogoFill className="w-5 h-5"/>
+                <PiInstagramLogoFill className={`${bigger ? "w-6 h-6" : "w-5 h-5"}`}/>
             </Link>
         </div>
     )
