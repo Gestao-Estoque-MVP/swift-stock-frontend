@@ -8,12 +8,10 @@ const Heading = () => {
         <header id="top" className="h-screen w-screen bg-center bg-[url('../assets/headingBg.png')] bg-no-repeat bg-fixed bg-cover">
             <Container className="flex text-white-primary relative h-full flex-col justify-center items-center text-center">
                 <h1 className="font-extrabold text-4xl max-w-xl bg-gradient-to-tr from-white-primary to-brand-500 bg-clip-text text-transparent">
-                    Gerencie seus estoques
-                    de maneira <span className="text-brand-400">fácil</span> e <span className="text-brand-400">intuitiva</span>
+                    Controle seus estoques com <span className="text-brand-400">praticidade</span> e <span className="text-brand-400">eficiência</span>
                 </h1>
                 <p className="max-w-md text-sm mt-5 leading-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et augue eros.
-                    Mauris tempus eu tellus a fringilla..
+                    Descubra o Estoque Fácil: o sistema que facilita o controle dos seus estoques
                 </p>
                 <a href={"#about"} className="animate-bounce pt-10">
                     <AiOutlineArrowUp className="rotate-180 w-6 h-6"/>
