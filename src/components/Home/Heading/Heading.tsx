@@ -12,7 +12,7 @@ const Heading = () => {
                 <p className="max-w-md text-sm mt-5 leading-5">
                     Descubra o Estoque Fácil: o sistema que facilita o controle dos seus estoques
                 </p>
-                <a href={"#about"} className="animate-bounce pt-10">
+                <a href={"#about"} className="animate-bounce mt-10 outline-none">
                     <AiOutlineArrowUp className="rotate-180 w-6 h-6"/>
                 </a>
                 <nav className="absolute bottom-0 left-0 pb-10 w-full flex justify-center md:justify-start">
