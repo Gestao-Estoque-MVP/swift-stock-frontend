@@ -7,6 +7,9 @@ import MenuMobile from "./MenuMobile"
 import logoWhiteSvg from "../../../assets/logo-white.svg"
 import React, { useEffect } from "react"
 import Container from "@/components/Container/Container"
+import { teste } from "@/server/graphql/user"
+import { client } from "@/server/client"
+import { gql } from "@apollo/client"
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -29,6 +32,16 @@ const Header = () => {
   function handleModal() {
     setIsOpen(!isOpen);
   }
+
+  client.query({
+    query:gql`
+        {
+            protected
+        }
+    `
+  }).then((result) => {
+    console.log(result.error);
+  })
 
 
   return (

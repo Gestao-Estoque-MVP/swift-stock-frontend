@@ -8,14 +8,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        headingGradient: "radial-gradient(circle, #E4E4E4, #9AAFFF)"
+        headingGradient: 'radial-gradient(circle, #E4E4E4, #9AAFFF)',
+        logoPattern: 'url("../assets/contact-bg.png")',
       },
     },
     fontFamily: {
       'default-font': ['Montserrat', 'sans-serif'],
     },
     colors: {
-      transparent: "transparent",
+      transparent: 'transparent',
       brand: {
         100: '#3B79FF',
         200: '#3026DC',
@@ -61,19 +62,19 @@ module.exports = {
         to: { right: '0', opacity: '1' },
       },
       bounce: {
-        "0%": {
-          transform: "translateY(0)",
-          opacity: 0.8
+        '0%': {
+          transform: 'translateY(0)',
+          opacity: 0.8,
         },
-        "50%": { 
-          transform: "translateY(-10px)",
-          opacity: 0.6
+        '50%': {
+          transform: 'translateY(-10px)',
+          opacity: 0.6,
         },
-        "100%": {
-          transform: "translateY(0)",
-          opacity: 0.8
-        }
-      }
+        '100%': {
+          transform: 'translateY(0)',
+          opacity: 0.8,
+        },
+      },
     },
   },
   plugins: [],
