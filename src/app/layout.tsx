@@ -1,6 +1,7 @@
 import { ApolloWrapper } from "@/components/ApolloProvider/ApolloProvider"
 import "./globals.css"
 import type { Metadata } from 'next'
+import ToastContainerComponent from "@/components/ToastContainer/ToastContainer"
 
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className="font-default-font">
           <ApolloWrapper>
             {children}
+            <ToastContainerComponent/>
           </ApolloWrapper>
       </body>
     </html>

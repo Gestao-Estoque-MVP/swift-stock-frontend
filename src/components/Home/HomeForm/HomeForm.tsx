@@ -5,7 +5,8 @@ import Container from "@/components/Container/Container";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
 
-import { gql, useMutation } from "@apollo/client";
+import { ApolloError, gql, useMutation } from "@apollo/client";
+import { toast } from "react-toastify";
 
 
 const CREATE_CONTACT_MUTATION = gql`
@@ -33,10 +34,7 @@ const HomeForm = () => {
 
     const handleFormSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(name, email, phoneNumber)
         try{
-    
-            // Passar as variáveis na chamada da mutation
             const res = await createContactInfo({
                 variables: {
                     Name: name,
@@ -46,11 +44,18 @@ const HomeForm = () => {
             })
     
             if(res.data?.createContactInfo){
-                return console.log("Criado Com sucesso")
+                return toast.success("Prontinho! Você será notificado em breve.");
             }
             
         }catch(error: unknown){
-            console.error("Error creating contact:", error);
+            if (error instanceof ApolloError && error.graphQLErrors && error.graphQLErrors.length > 0) {
+                const serverError = error.graphQLErrors[0];
+                
+                if(serverError.message.includes("duplicate key value")){
+                    return toast.error("Email ou numero de telefone já cadastrado");
+                }
+            }                
+            return toast.error("Oops! Algo deu errado. Tente novamente mais tarde.");
         };
     };
 
@@ -72,7 +77,7 @@ const HomeForm = () => {
 
     return(
         <section>
-            <Container className="flex justify-between items-center">
+            <Container className="flex justify-between items-center my-16">
                 <figure className="hidden md:flex md:w-[40%] md:justify-center md:items-center">
                     <Image className="w-full h-full object-cover" src={logoIcon} alt="Swift Stock logo"/>
                 </figure>
