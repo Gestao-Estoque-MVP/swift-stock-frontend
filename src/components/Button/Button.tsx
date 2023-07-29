@@ -2,7 +2,7 @@
 interface IButtonProps {
     children: React.ReactNode;
     className?: string;
-    type: "button" | "submit" | "reset" | undefined;
+    type?: "button" | "submit" | "reset" | undefined;
 }
 
 
