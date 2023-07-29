@@ -5,6 +5,20 @@ import Container from "@/components/Container/Container";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
 
+import { gql, useMutation } from "@apollo/client";
+
+
+const CREATE_CONTACT_MUTATION = gql`
+    mutation CreateContactInfo($input: {Name: String!, email: String!, phone: String!}) {
+        createContactInfo(input: $input) {
+        id
+        Name
+        email
+        phone
+    }
+  }
+`;
+
 
 const HomeForm = () => {
 
@@ -12,6 +26,29 @@ const HomeForm = () => {
     const [email, setEmail] = useState<string>("");
     const [name, setName] = useState<string>("");
 
+    const [ createContactInfo ] = useMutation(CREATE_CONTACT_MUTATION);
+
+    const handleFormSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(name, email, phoneNumber)
+        try{
+
+            const res = await createContactInfo({
+              variables: {
+                input:{
+                    Name: name,
+                    email: email,
+                    phone: phoneNumber,
+                }
+                },
+            })
+
+            console.log(res);
+            
+        }catch(error: unknown){
+            console.error("Error creating contact:", error);
+        };
+    };
 
     const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let formattedNumber = e.target.value;
@@ -47,7 +84,7 @@ const HomeForm = () => {
                         </p>
                     </header>
 
-                    <form className="flex flex-col gap-6 text-brand-200 font-semibold">
+                    <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 text-brand-200 font-semibold">
                         <input className="py-2 px-4 outline-none rounded-md placeholder:text-grey-200 placeholder:font-medium"
                             placeholder="Digite seu Nome" type="text" required value={name} onChange={(e)=>setName(e.target.value)}
                         />
