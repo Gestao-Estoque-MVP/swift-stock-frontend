@@ -8,6 +8,7 @@ import logoWhiteSvg from "../../../assets/logo-white.svg"
 import React, { useEffect } from "react"
 import Container from "@/components/Container/Container"
 
+
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -29,7 +30,6 @@ const Header = () => {
   function handleModal() {
     setIsOpen(!isOpen);
   }
-
 
   return (
     <>
