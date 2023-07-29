@@ -5,24 +5,10 @@ import Container from "@/components/Container/Container";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
 
-import { ApolloError, gql, useMutation } from "@apollo/client";
+import { ApolloError, useMutation } from "@apollo/client";
 import { toast } from "react-toastify";
+import { CREATE_CONTACT_MUTATION } from "@/graphql/mutation/user.mutations";
 
-
-const CREATE_CONTACT_MUTATION = gql`
-    mutation CreateContactInfo($Name: String!, $email: String!, $phone: String!) {
-        createContactInfo(input: {
-            Name: $Name,
-            email: $email,
-            phone: $phone
-        }) {
-        id
-        Name
-        email
-        phone
-    }
-  }
-`;
 
 const HomeForm = () => {
 
