@@ -9,8 +9,12 @@ import { gql, useMutation } from "@apollo/client";
 
 
 const CREATE_CONTACT_MUTATION = gql`
-    mutation CreateContactInfo($input: {Name: String!, email: String!, phone: String!}) {
-        createContactInfo(input: $input) {
+    mutation CreateContactInfo($Name: String!, $email: String!, $phone: String!) {
+        createContactInfo(input: {
+            Name: $Name,
+            email: $email,
+            phone: $phone
+        }) {
         id
         Name
         email
@@ -18,7 +22,6 @@ const CREATE_CONTACT_MUTATION = gql`
     }
   }
 `;
-
 
 const HomeForm = () => {
 
@@ -32,18 +35,19 @@ const HomeForm = () => {
         e.preventDefault();
         console.log(name, email, phoneNumber)
         try{
-
+    
+            // Passar as variáveis na chamada da mutation
             const res = await createContactInfo({
-              variables: {
-                input:{
+                variables: {
                     Name: name,
                     email: email,
                     phone: phoneNumber,
                 }
-                },
             })
-
-            console.log(res);
+    
+            if(res.data?.createContactInfo){
+                return console.log("Criado Com sucesso")
+            }
             
         }catch(error: unknown){
             console.error("Error creating contact:", error);
