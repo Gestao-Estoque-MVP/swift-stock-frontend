@@ -1,19 +1,16 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client"
-
-const getAuthHeaders = () => {
-    const token = localStorage.getItem('token')
-
-    return {
-        'Authorization': `Bearer ${token}`,
-    }
-}
+import { HttpLink } from "@apollo/client";
+import {
+  NextSSRInMemoryCache,
+  NextSSRApolloClient,
+} from "@apollo/experimental-nextjs-app-support/ssr";
+import { registerApolloClient } from "@apollo/experimental-nextjs-app-support/rsc";
 
 
-const client = new ApolloClient({
-    uri: "https://swift-stock-api-jb2ymony6q-rj.a.run.app/graphql",
-    cache: new InMemoryCache(),
-})
-
-
-
-export {client}
+export const { getClient } = registerApolloClient(() => {
+  return new NextSSRApolloClient({
+    cache: new NextSSRInMemoryCache(),
+    link: new HttpLink({
+      uri: "https://swift-stock-api-jb2ymony6q-rj.a.run.app/graphql",
+    }),
+  });
+});
