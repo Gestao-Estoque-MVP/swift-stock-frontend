@@ -1,4 +1,5 @@
 import About from "@/components/Home/About/About";
+import Competencies from "@/components/Home/Competencies/Competencies";
 import Contact from "@/components/Home/Contact/Contact";
 import Footer from "@/components/Home/Footer/Footer";
 import Header from "@/components/Home/Header/Header";
@@ -11,6 +12,7 @@ const HomePage = () => {
       <main className="bg-white-primary">
         <Heading/>
         <About/>
+        <Competencies/>
         <Contact/>
       </main>
       <Footer/>

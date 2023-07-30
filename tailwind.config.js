@@ -76,6 +76,13 @@ module.exports = {
         },
       },
     },
+    minWidth: {
+      card: '12.5rem',
+    },
+    maxHeight: {
+      mobile: '58.75rem',
+      desktop: '27.5rem',
+    },
   },
   plugins: [],
 };
