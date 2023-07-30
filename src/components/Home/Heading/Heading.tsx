@@ -15,7 +15,7 @@ const Heading = () => {
                 <a href={"#about"} className="animate-bounce mt-10 outline-none">
                     <AiOutlineArrowUp className="rotate-180 w-6 h-6"/>
                 </a>
-                <nav className="absolute bottom-0 left-0 pb-10 w-full flex justify-center md:justify-start">
+                <nav className="absolute bottom-0 pl-5 left-0 pb-10 w-full flex justify-center md:justify-start">
                     <SocialMediaLinks bigger={true}/>
                 </nav>
             </Container>

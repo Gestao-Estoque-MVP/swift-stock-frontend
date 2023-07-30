@@ -12,7 +12,6 @@ const HomePage = () => {
       <main className="bg-white-primary">
         <Heading/>
         <About/>
-        <Competencies/>
         <Contact/>
       </main>
       <Footer/>
