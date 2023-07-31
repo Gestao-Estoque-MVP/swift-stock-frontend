@@ -1,8 +1,15 @@
 'use client'
 
 import React from 'react'
-import {MdGraphicEq} from 'react-icons/md'
 import dataCard from '../../../../competenciesInfos.json'
+import Card from '../Card/Card'
+import {CgGym} from "react-icons/cg";
+import { AiFillClockCircle, AiFillSignal } from 'react-icons/ai';
+import { PiFeatherFill, PiWarningFill, PiHandFistFill } from 'react-icons/pi';
+import { BsFillRocketFill} from 'react-icons/bs';
+import { MdTouchApp, MdFiberSmartRecord} from 'react-icons/md';
+import { BiSolidBrain } from "react-icons/bi";
+
 
 const Competencies = () => {
   const [seeMore, setSeeMore] = React.useState(false)
@@ -21,15 +28,37 @@ const Competencies = () => {
 
         <ul className='flex flex-wrap	gap-6 justify-between pb-14'>
           {dataCard.map((data) => (
-             <li data-aos="fade-up" data-aos-delay={`${data.id * 150}`} data-aos-offset="100" key={data.id} className='flex flex-col flex-1 gap-6 bg-white-primary rounded-lg	py-4 px-6 min-w-card max-w-md md:max-w-xs md:flex-none'>
-              <div className='flex gap-3 items-center'>
-                <div className='rounded-full border-grey-100 border p-1'>
-                  <MdGraphicEq className='text-brand-200' size={24}/>
+             <Card data={data}>
+                <div className="text-brand-200">
+                {
+                  data.title === "Empoderamento" && <PiHandFistFill/>
+                 }
+                 {
+                  data.title === "Tempo" && <AiFillClockCircle/>
+                 }
+                 {
+                  data.title === "Liberdade" && <PiFeatherFill/>
+                 }
+                 {
+                  data.title === "Melhoria Contínua" && <AiFillSignal/>
+                 }
+                 {
+                  data.title === "Gerenciamento Simplificado" && <BsFillRocketFill/>
+                 }
+                 {
+                  data.title === "Alertas de Estoque" && <PiWarningFill/>
+                 }
+                 {
+                  data.title === "Gestão de Variações de Produto" && <MdFiberSmartRecord/>
+                 }
+                 {
+                  data.title === "Interface Intuitiva" && <MdTouchApp/>
+                 }
+                 {
+                  data.title === "Inteligência de Negócios" && <BiSolidBrain/>
+                 }
                 </div>
-                <h2 className='text-base text-brand-200 font-extrabold'>{data.title}</h2>
-              </div>
-              <p className='text-grey-200 text-xs font-medium'>{data.description}</p>
-            </li>
+              </Card>
           )
           )}
 
