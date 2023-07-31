@@ -12,7 +12,7 @@ const Competencies = () => {
   }
 
   return (
-    <section className={`bg-brand-400 py-11 relative transition-all duration-300 ${!seeMore ? 'max-h-mobile md:max-h-desktop overflow-hidden' : 'h-fit'}  after:content-[""] after:w-full after:h-80 after:absolute after:bottom-0 after:z-10 after:bg-gradient-to-t from-brand-400 ...`}>
+    <section id="advantages" className={`bg-brand-400 py-11 relative transition-all duration-300 ${!seeMore ? 'max-h-mobile md:max-h-desktop overflow-hidden' : 'h-fit'}  after:content-[""] after:w-full after:h-80 after:absolute after:bottom-0 after:z-10 after:bg-gradient-to-t from-brand-400 ...`}>
       <div className='my-0 mx-auto p-4 max-w-screen-2xl flex flex-col gap-11'>
         <div className='font-default-font flex flex-col gap-2'>
           <h2 data-aos="fade-right" className=' text-white-primary text-2xl	font-extrabold'>Porquê vale a pena?</h2>

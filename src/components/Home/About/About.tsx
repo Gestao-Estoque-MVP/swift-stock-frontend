@@ -22,7 +22,7 @@ const About = () => {
                         de um pesadelo em um passeio tranquilo. Liberte-se das dores de cabeça do inventário e dê um salto para
                         o sucesso do seu negócio. Experimente a magia de ter o controle total do seu estoque na palma da sua mão!
                     </p>
-                    <Link data-aos="fade-right" href="" className="group text-brand-200 font-medium text-base flex items-center gap-3 transition-all duration-75 hover:brightness-105">
+                    <Link data-aos="fade-right" href="#participate" className="group text-brand-200 font-medium text-base flex items-center gap-3 transition-all duration-75 hover:brightness-105">
                         Quero fazer Parte
                         <PiArrowUpLight className="rotate-90 w-5 h-5 transition-all duration-150 group-hover:translate-x-2"/>
                     </Link>

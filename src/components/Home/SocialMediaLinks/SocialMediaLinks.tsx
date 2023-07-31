@@ -16,7 +16,7 @@ const SocialMediaLinks = ({bigger}: ISocialMediaLinksProps) => {
                 <RiWhatsappFill className={`${bigger ? "w-6 h-6" : "w-5 h-5"}`}/>
             </Link>
 
-            <Link data-aos="fade-up" data-aos-delay="250" data-aos-offset="0" href="" className="transition-all ease-in duration-75 hover:-translate-y-1">
+            <Link data-aos="fade-up" data-aos-delay="250" data-aos-offset="0" href="https://www.linkedin.com/in/swift-stock-3a2403286/" className="transition-all ease-in duration-75 hover:-translate-y-1">
                 <FaLinkedin className={`${bigger ? "w-6 h-6" : "w-5 h-5"}`}/>
             </Link>
 

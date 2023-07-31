@@ -62,7 +62,7 @@ const HomeForm = () => {
     };
 
     return(
-        <section>
+        <section id="participate">
             <Container className="flex justify-between items-center my-16">
                 <figure data-aos="flip-left" className="hidden md:flex md:w-[40%] md:justify-center md:items-center">
                     <Image className="w-full h-full object-cover" src={logoIcon} alt="Swift Stock logo"/>
