@@ -3,8 +3,8 @@ import Link from "next/link";
 import { PiArrowUpLight } from "react-icons/pi";
 import logoIcon from "../../../assets/logoIcon.svg";
 import Image from "next/image";
-import swiftStockUI from "../../../assets/swifStockUI.png";
-import swiftStockMobileUI from "../../../assets/swifStockMobileUI.png";
+import swiftStockUI from "../../../assets/swifStockUI.jpg";
+import swiftStockMobileUI from "../../../assets/swifStockMobileUI.jpg";
 
 
 const About = () => {
