@@ -8,7 +8,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Footer = () => {
     return(
-        <footer className="bottom-0 w-screen h-96 bg-brand-400 py-8 bg-[url('/src/assets/footerBg.png')]">
+        <footer data-aos="fade-right" className="bottom-0 w-screen h-96 bg-brand-400 py-8 bg-[url('/src/assets/footerBg.png')]">
             <Container className="relative  h-full">
 
                 <div className="group w-100 flex justify-center -translate-y-16">

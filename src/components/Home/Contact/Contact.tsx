@@ -5,12 +5,12 @@ import {IoIosCopy} from 'react-icons/io'
 
 const Contact = () => {
   return (
-    <section className="bg-white-primary py-16">
+    <section className="bg-white-primary py-24" data-aos="fade-up">
       <div className="bg-logoPattern bg-cover bg-no-repeat bg-right my-0 mx-auto p-4 w-full max-w-screen-2xl bg-brand-200 py-16 flex flex-col items-center gap-11 md:rounded-3xl md:bg-center ">
       <div className="flex flex-col gap-9">
       <div className="flex flex-col gap-2">
-        <h1 className="text-center font-default-font text-3xl text-white-primary font-extrabold">Dúvidas?</h1>
-        <p className="font-deafult-font text-base font-normal text-white-total text-center">Entre em contato com o time da Swift Stock</p>
+        <h1 className="text-center font-default-font text-3xl text-white-primary font-extrabold" data-aos="fade-right">Dúvidas?</h1>
+        <p className="font-deafult-font text-base font-normal text-white-total text-center" data-aos="fade-right">Entre em contato com o time da Swift Stock</p>
         </div>
 
         <div className="flex flex-col justify-center items-center gap-3">
@@ -21,7 +21,7 @@ const Contact = () => {
 
           <div className="flex gap-2 items-center">
           <IoIosCopy title="Copiar email" className="text-white-total cursor-pointer " size={16}/>
-          <p className="text-base text-brand-500 font-default-font font-normal underline">swiftstock@gmail.com</p>
+          <Link href={"mailto:swiftstock@gmail.com"} className="text-base text-brand-500 font-default-font font-normal underline">swiftstock@gmail.com</Link>
           </div>
         </div>
       </div>

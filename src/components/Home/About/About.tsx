@@ -9,20 +9,20 @@ const About = () => {
     return(
         <section id="about" className="md:relative p-0 lg:h-[720px] bg-white-primary">
             <Container className="w-full h-full py-5">
-                <div className="h-full flex flex-col items-start lg:max-w-[35%] md:justify-center">
+                <div className=" py-5 h-full flex flex-col items-start lg:max-w-[35%] md:justify-center">
                     <div className="flex gap-3 items-center">
-                        <h2 className="text-brand-200 font-extrabold text-2xl mb-6">
+                        <h2 data-aos="fade-up" className="text-brand-200 font-extrabold text-2xl mb-6">
                             Sobre a SwiftStock
                         </h2>
-                        <Image src={logoIcon} alt="logo da swift stock" className="mb-6"></Image>
+                        <Image data-aos="fade-up" src={logoIcon} alt="logo da swift stock" className="mb-6"></Image>
                     </div>
-                    <p className="text-grey-300 mb-9 text-sm leading-6">
+                    <p data-aos="fade-up" className="text-grey-300 mb-9 text-sm leading-6">
                         Imagine poder acordar todas as manhãs sem se preocupar com a contagem do seu estoque ou ter medo de se
                         deparar com prateleiras vazias. Bem-vindo ao Swift Stock, onde transformamos o gerenciamento de estoque
                         de um pesadelo em um passeio tranquilo. Liberte-se das dores de cabeça do inventário e dê um salto para
                         o sucesso do seu negócio. Experimente a magia de ter o controle total do seu estoque na palma da sua mão!
                     </p>
-                    <Link href="" className="group text-brand-200 font-medium text-base flex items-center gap-3 transition-all duration-75 hover:brightness-105">
+                    <Link data-aos="fade-right" href="" className="group text-brand-200 font-medium text-base flex items-center gap-3 transition-all duration-75 hover:brightness-105">
                         Quero fazer Parte
                         <PiArrowUpLight className="rotate-90 w-5 h-5 transition-all duration-150 group-hover:translate-x-2"/>
                     </Link>
