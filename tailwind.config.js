@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         headingGradient: 'radial-gradient(circle, #E4E4E4, #9AAFFF)',
+        advantagesGradient: 'linear-gradient(to right, #E4E4E4, #9A9A9A)',
         logoPattern: 'url("../assets/contact-bg.png")',
       },
     },

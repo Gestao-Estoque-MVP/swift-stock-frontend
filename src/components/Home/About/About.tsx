@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PiArrowUpLight } from "react-icons/pi";
 import logoIcon from "../../../assets/logoIcon.svg";
 import Image from "next/image";
+import swiftStockUI from "../../../assets/swifStockUI.jpg";
 
 
 const About = () => {
@@ -29,10 +30,10 @@ const About = () => {
                 </div>
             </Container>
 
-            <figure className="w-full max-w-7xl h-[720px] overflow-auto bg-brand-400 rounded-2xl flex items-center justify-center
+            <figure data-aos="fade-left" className="w-full max-w-7xl h-[720px] overflow-auto bg-brand-400 rounded-2xl flex items-start justify-start
             shadow-2xl m-5 lg:absolute lg:-right-[500px] 2xl:-right-[450px] lg:-top-28 lg:w-[1280px]">
-                <img className="w-full h-full object-cover"
-                src="" 
+                <img className="h-full lg:w-full lg:h-auto object-cover"
+                src={swiftStockUI.src}
                 alt="interface da SwiftStock"/>
             </figure>
 

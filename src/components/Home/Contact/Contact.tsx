@@ -19,16 +19,16 @@ const Contact = () => {
             <p className="text-base text-brand-500 font-default-font font-normal">+55 99 99999-9999</p>
           </div> */}
 
-          <div className="flex gap-2 items-center">
+          <div data-aos="fade-right" className="flex gap-2 items-center">
             <IoIosCopy title="Copiar email" className="text-white-total cursor-pointer " size={16}/>
-            <Link href={"mailto:swiftstock@gmail.com"} className="text-base text-brand-500 font-default-font font-normal underline">swiftstock@gmail.com</Link>
+            <Link href={"mailto:switftstock@gmail.com"} className="text-base text-brand-500 font-default-font font-normal underline">switftstock@gmail.com</Link>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4 w-full md:flex-row justify-center md:w-auto">
   {/* <Link className="flex items-center justify-center py-3 rounded w-full md:w-auto bg-white-primary text-brand-300 font-default-font font-semibold text-base md:px-16" href="#">Whatsapp</Link> */}
-  <Link className="flex items-center justify-center py-3 rounded w-full md:w-auto bg-white-primary text-brand-300 font-default-font font-semibold text-base md:px-16" href="#">Enviar Email</Link>
+  <Link data-aos="fade-right" className="flex items-center justify-center py-3 rounded w-full md:w-auto bg-white-primary text-brand-300 font-default-font font-semibold text-base md:px-16" href="mailto:switftstock@gmail.com">Enviar Email</Link>
 </div>
 
       </div>

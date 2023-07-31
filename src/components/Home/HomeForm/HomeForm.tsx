@@ -90,13 +90,13 @@ const HomeForm = () => {
                             placeholder="Insira seu Número de telefone" type="text" minLength={15} maxLength={15} value={phoneNumber} required 
                             onChange={(e) => handlePhoneNumberChange(e)}
                         />
-                        <div data-aos="fade-right" className="flex items-center gap-3">
+                        <div data-aos="zoom-in-up" className="flex items-center gap-3">
                             <input id="accept-notifications" type="checkbox" required/>
                             <label htmlFor="accept-notifications" className="text-grey-300 text-xs font-normal">
                                 Concordo em ser notificado sobre o lançamento da Swift Stock
                             </label>
                         </div>
-                        <Button aos="fade-right" type="submit" className="mt-6 max-w-full rounded-md">Quero ser notificado!</Button>
+                        <Button aos="zoom-in-up" type="submit" className="mt-6 max-w-full rounded-md">Quero ser notificado!</Button>
                     </form>
 
                 </div>
