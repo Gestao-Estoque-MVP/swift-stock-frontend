@@ -3,13 +3,14 @@ interface IButtonProps {
     children: React.ReactNode;
     className?: string;
     type?: "button" | "submit" | "reset" | undefined;
+    aos?: string 
 }
 
 
 //INSERIR TAMANHO DO BOTÃO E AS DEMAIS ESTILIZAÇÕES COM A PROP CLASSNAME
-const Button = ({children, className, type}: IButtonProps) => {
+const Button = ({children, className, type, aos}: IButtonProps) => {
     return(
-        <button type={type} className={`flex items-center justify-center gap-2 w-screen py-3 pw-6 transition-all ease-in text-white-primary 
+        <button data-aos={aos} type={type} className={`flex items-center justify-center gap-2 w-screen py-3 pw-6 transition-all ease-in text-white-primary 
         bg-gradient-to-r from-brand-300 to-brand-100 hover:brightness-90 ${className} `}>
 
             {children}
