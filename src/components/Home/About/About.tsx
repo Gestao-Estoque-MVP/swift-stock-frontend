@@ -30,8 +30,8 @@ const About = () => {
                 </div>
             </Container>
 
-            <figure data-aos="fade-left" className="w-full max-w-7xl h-[720px] overflow-auto bg-brand-400 rounded-2xl flex items-start justify-start
-            shadow-2xl m-5 lg:absolute lg:-right-[500px] 2xl:-right-[450px] lg:-top-28 lg:w-[1280px]">
+            <figure data-aos="fade-left" className="w-[90%] max-w-7xl h-[720px] overflow-auto bg-brand-400 rounded-2xl flex items-start justify-start
+            shadow-2xl m-5 lg:absolute lg:-right-[650px] 2xl:-right-[450px] lg:-top-28 lg:w-[1280px]">
                 <img className="h-full lg:w-full lg:h-auto object-cover"
                 src={swiftStockUI.src}
                 alt="interface da SwiftStock"/>
