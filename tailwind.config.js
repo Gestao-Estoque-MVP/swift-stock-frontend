@@ -82,7 +82,7 @@ module.exports = {
     },
     maxHeight: {
       mobile: '58.75rem',
-      desktop: '27.5rem',
+      desktop: '32.5rem',
     },
   },
   plugins: [],

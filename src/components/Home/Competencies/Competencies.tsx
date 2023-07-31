@@ -12,8 +12,8 @@ const Competencies = () => {
   }
 
   return (
-    <section id="advantages" className={`bg-brand-400 py-11 relative bg-[url('../assets/blur.png')] bg-no-repeat bg-cover transition-all duration-300 ${!seeMore ? 'max-h-mobile md:max-h-desktop overflow-hidden' : 'h-fit'}  after:content-[""] after:w-full after:h-80 after:absolute after:bottom-0 after:z-10 after:bg-gradient-to-t from-brand-400 ...`}>
-      <div className='my-0 mx-auto p-4 max-w-screen-2xl flex flex-col gap-11'>
+    <section id="advantages" className={`bg-brand-400 py-11 pt-20 relative bg-[url('../assets/blur.png')] bg-no-repeat bg-cover transition-all duration-300 ${!seeMore ? 'max-h-mobile md:max-h-desktop overflow-hidden' : 'h-fit'}  after:content-[""] after:w-full after:h-80 after:absolute after:bottom-0 after:z-10 after:bg-gradient-to-t from-brand-400 ...`}>
+      <div className='my-0 mx-auto p-4 max-w-screen-2xl flex flex-col gap-11 mb-11'>
         <div className='font-default-font flex flex-col gap-2'>
           <h2 data-aos="fade-right" className=' text-2xl max-w-xs font-extrabold bg-advantagesGradient bg-clip-text text-transparent'>Porquê vale a pena?</h2>
           <p data-aos="fade-right" className='text-grey-100 text-xs	font-light'>Entenda como podemos facilitar o seu dia a dia</p>
@@ -22,14 +22,14 @@ const Competencies = () => {
         <ul className='flex flex-wrap	gap-6 justify-between pb-14'>
           {dataCard.map((data) => (
              <li data-aos="fade-up" data-aos-delay={`${data.id * 150}`} data-aos-offset="100" key={data.id} className='flex flex-col flex-1 gap-6 bg-white-primary rounded-lg	py-4 px-6 min-w-card max-w-md md:max-w-xs md:flex-none'>
-             <div className='flex gap-3 items-center'>
-               <div className='rounded-full border-grey-100 border p-1'>
-                 <MdGraphicEq className='text-brand-200' size={24}/>
-               </div>
-               <h2 className='text-base text-brand-200 font-extrabold'>{data.title}</h2>
-             </div>
-             <p className='text-grey-200 text-xs font-medium'>{data.description}</p>
-           </li>
+              <div className='flex gap-3 items-center'>
+                <div className='rounded-full border-grey-100 border p-1'>
+                  <MdGraphicEq className='text-brand-200' size={24}/>
+                </div>
+                <h2 className='text-base text-brand-200 font-extrabold'>{data.title}</h2>
+              </div>
+              <p className='text-grey-200 text-xs font-medium'>{data.description}</p>
+            </li>
           )
           )}
 

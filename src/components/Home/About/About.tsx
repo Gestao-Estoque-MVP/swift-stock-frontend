@@ -8,7 +8,7 @@ import swiftStockUI from "../../../assets/swifStockUI.jpg";
 
 const About = () => {
     return(
-        <section id="about" className="md:relative p-0 lg:h-[720px] bg-white-primary">
+        <section id="about" className="md:relative p-0 lg:h-[720px] bg-white-primary pt-20 lg:pt-0">
             <Container className="w-full h-full py-5">
                 <div className=" py-5 h-full flex flex-col items-start lg:max-w-[35%] md:justify-center">
                     <div className="flex gap-3 items-center">

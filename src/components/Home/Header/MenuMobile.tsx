@@ -22,10 +22,11 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ modal, setModal })=> {
 
         <nav className='flex flex-col gap-20 text-right'>
           <div className='flex flex-col gap-12 text-right text-base text-brand-200'>
-          <Link href={'/'}>Início</Link>
-          <Link href={'/'}>Sobre</Link>
-          <Link href={'/'}>Benefícios</Link>
-          <Link href={'/'}>Depoimentos</Link> 
+            <Link href={'#top'} onClick={handleModal}>Início</Link>
+            <Link href={'#about'} onClick={handleModal}>Sobre</Link>
+            <Link href={'#advantages'} onClick={handleModal}>Vantagens</Link>
+            <Link href={'#participate'} onClick={handleModal}>Participar</Link>
+            <Link href={'#contact'} onClick={handleModal}>Contato</Link> 
           </div>
 
           <Link href={'/'} className='py-2 px-10 bg-brand-200 text-white-primary rounded-md font-bold uppercase'>Login</Link> 
