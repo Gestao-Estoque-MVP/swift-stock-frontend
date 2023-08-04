@@ -19,11 +19,13 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       brand: {
+        50: '#DFEDF2',
         100: '#3B79FF',
         200: '#3026DC',
         300: '#25238C',
         400: '#09081F',
         500: '#9AAFFF',
+        600: '#5B52F1',
       },
       success: {
         100: '#59D256',
@@ -48,6 +50,7 @@ module.exports = {
         total: '#FFFFFF',
       },
       grey: {
+        50: '#F5F5F5',
         100: '#9A9A9A',
         200: '#6A6A6A',
         300: '#4E4E4E',
