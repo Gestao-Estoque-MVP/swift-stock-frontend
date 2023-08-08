@@ -7,16 +7,11 @@ interface IInputProps {
   label: string;
   id: string;
   type: string;
-  value: string;
   placeholder?: string;
-  setValue: (value: string) => void;
+  register?: object;
 }
 
-const Input = ({ label, id, type, setValue, value, placeholder }: IInputProps) => {
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
+const Input = ({ label, id, type, placeholder, register, ...props }: IInputProps) => {
   const [inputType, setInputType] = useState(type || "text");
 
   const handlePasswordType = () => {
@@ -28,7 +23,10 @@ const Input = ({ label, id, type, setValue, value, placeholder }: IInputProps) =
       <label className='font-default-font text-sm uppercase font-semibold text-grey-100' htmlFor={id}>{label}</label>
       <div className='rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
       hover:border-brand-200 hover:border-solid border-[3px]'>
-        <input placeholder={placeholder} className='w-full py-4 bg-transparent outline-0' type={inputType} id={id} name={id} onChange={handleChange} value={value}  />
+        <input placeholder={placeholder} className='w-full py-4 bg-transparent outline-0'
+          type={inputType} id={id} name={id}
+          {...register} {...props}
+        />
         <button type="button" onClick={handlePasswordType}>
           {
           type === 'password' &&
