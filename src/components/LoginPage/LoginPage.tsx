@@ -21,8 +21,8 @@ const LoginPage = () => {
           </header>
 
           <form className='flex flex-col gap-5 mb-8' action="">
-            <Input type='text' id='email' label='E-mail' value={email} setValue={setEmail} />
-            <Input type='password' id='email' label='Password' value={password} setValue={setPassword} />
+            <Input type='text' id='email' label='E-mail' placeholder='Insira seu Email' value={email} setValue={setEmail} />
+            <Input type='password' id='email' placeholder='Insira sua Senha' label='Password' value={password} setValue={setPassword} />
 
             <Link href={'#'} className='py-2 rounded-lg uppercase font-default-font text-center text-base text-white-primary font-bold bg-brand-200'>Acessar</Link>
             <Link className='text-xs text-right underline text-brand-100 font-semibold font-default-font' href={'#'}>Esqueci minha senha</Link>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface IFormPageProps {
   children: React.ReactNode
@@ -6,7 +6,7 @@ interface IFormPageProps {
 
 const FormPage = ({children}: IFormPageProps) => {
   return (
-    <section className='w-screen h-screen bg-gradient-to-t from-brand-200 to-brand-600 flex items-center justify-center'> 
+    <section className='w-screen h-screen bg-no-repeat bg-cover bg-[url("../assets/headingBg.png")] from-brand-200 to-brand-600 flex items-center justify-center'> 
       {children}
     </section>
   )
