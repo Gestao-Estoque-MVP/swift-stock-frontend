@@ -5,71 +5,104 @@ import { useMemo } from 'react'
 import { type MRT_ColumnDef } from 'material-react-table'
 import Button from '../Button/Button'
 
+import ProductStatus from './ProductStatus'
+
 type TableProps = {
     columns: any
     data: any
 }
 
 interface ITable {
-    id: number
-    name : string
-    price: number
+    infor: object
+
+
+    categoria: string
+    entrada: string
+    sku: string
+    qtd: number
     stock: number
-    description: string
-    image: string    
+    estoque: string
+
+
 }
+
+
+
+const states = [
+    "Completo","Baixo","Vazio","Médio"
+]
+
+
+
 
 export const Table = () => {
     const data: ITable[] = [];
 
-    for (let i = 1; i <= 1000; i++) {
+    for (let i = 1; i <= 100; i++) {
         data.push({
-            id: i,
-            name: `Product ${i}`,
-            price: i * 100,
+            infor: { name: "Item Name " + i, imageUrl: "https://avatars.githubusercontent.com/u/139462945?s=200&v=4" },
+            categoria: `Acessório ${i}`,
+            entrada: "10/07/2023",
+            sku: `0000${i % 9}`,
+            qtd: i * 100,
             stock: i * 10,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-            image: "https://avatars.githubusercontent.com/u/69609025?v=4"
+            estoque: states[i % 4],
+
         });
     }
 
-const columns = useMemo<MRT_ColumnDef <ITable>[]>(
-    () => [
-        {
-            header: "ID",
-            accessorKey: "id"
-        },
-        {
-            header: "Name",
-            accessorKey: "name"
-        },
-        {
-            header: "Price",
-            accessorKey: "price"
-        },
-        {
-            header: "Stock",
-            accessorKey: "stock"
-        },
-        {
-            header: "Description",
-            accessorKey: "description"
-        },
-        {
-            header: "Image",
-            accessorKey: "image",
-            Cell: ( value ) => <img src={value.renderedCellValue} alt="product" style={{ width: '100px', height: '100px' }} />
-        },
-    ],
-    [],
-)
+    const columns = useMemo<MRT_ColumnDef<ITable>[]>(
+        () => [
+            {
+                header: "Nome",
+                accessorKey: "infor",
+                Cell: (value) => <div className="flex items-center gap-4 font-bold">
+                    <img src={value.renderedCellValue.imageUrl} className="rounded-[14px]" alt="product" style={{ width: '49px', height: '49px' }} />
+                    <h1>{value.renderedCellValue.name}</h1>
+                </div>
+            },
+            {
+                header: "Categoria",
+                accessorKey: "categoria",
+                Cell: (value) => <h1>{value.renderedCellValue}</h1>
+            },
+            {
+                header: "SKU",
+                accessorKey: "sku"
+            },
+            {
+                header: "Entrada",
+                accessorKey: "entrada"
+            },
+            {
+                header: "Qtd.",
+                accessorKey: "qtd"
+            },
+            {
+                header: "Estoque",
+                accessorKey: "estoque",
+
+                Cell: (value) => <>
+                    <ProductStatus> {value.renderedCellValue} </ProductStatus>
+                </>
+            }
+        ],
+        [],
+    )
 
     return (
-        <MaterialReactTable
-        columns={columns}
-        data={data}
-        enableDensityToggle={false}
-        enableFullScreenToggle={false}
-        />
+        <div className="max-w-[1200px] m-auto max-w-full">
+            <h1 className='font-bold ml-[18px]'>Lista de produtos</h1>
+            <MaterialReactTable
+                columns={columns}
+                data={data}
+                enableDensityToggle={false}
+                enableFullScreenToggle={false}
+            />
+
+        </div>
+
     )
 }
+
+
