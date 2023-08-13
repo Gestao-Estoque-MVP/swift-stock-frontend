@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logoIcon from "../../../assets/logoIcon.svg";
+import logoIcon from "../../../../assets/logoIcon.svg";
 import Container from "@/components/Container/Container";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
