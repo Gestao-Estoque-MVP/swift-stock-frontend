@@ -1,6 +1,6 @@
 "use client"
 
-import FormPage from "@/components/FormPage/FormPage";
+import FormPage from "@/components/Pages/FormPages/FormPage/FormPage";
 import FormLayout from "../FormLayout/FormLayout";
 import Input from "@/components/Inputs/Input";
 import nookies from "nookies";

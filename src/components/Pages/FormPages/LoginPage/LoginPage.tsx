@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import FormPage from '../../../FormPage/FormPage'
+import FormPage from '../FormPage/FormPage'
 import Input from '../../../Inputs/Input'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
@@ -9,12 +9,12 @@ import { TLogin } from '@/app/interfaces/login.interface'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from '@/schemas/login.schema'
 import FormLayout from '../FormLayout/FormLayout'
+import { useMutation } from '@apollo/client'
+import { LOGIN_MUTATION } from '@/graphql/mutation/mutation'
+import { toast } from 'react-toastify'
 
 
 const LoginPage = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-
   const {
     register,
     handleSubmit,
@@ -24,8 +24,20 @@ const LoginPage = () => {
     resolver: zodResolver(loginSchema)
   });
 
-  const submitLogin = (data: TLogin) => {
-    console.log(data);
+  const [login] = useMutation(LOGIN_MUTATION);
+
+  const submitLogin = async(data: TLogin) => {
+    try{
+      const res = await login({
+        variables: data
+      })
+
+      if(res.data?.login){
+        return toast.success("Login feito com sucesso!");
+      }
+    }catch(err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -36,7 +48,7 @@ const LoginPage = () => {
               {
                 errors.email && <small className="-translate-y-4 text-error-200">{errors.email.message}</small>
               }
-              <Input type='password' id='email' placeholder='Insira sua Senha' label='Password'  register={register("password")} />
+              <Input type='password' id='password' placeholder='Insira sua Senha' label='Password'  register={register("password")} />
               {
                 errors.password && <small className="-translate-y-4 text-error-200">{errors.password.message}</small>
               }
