@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useState } from 'react';
-import { AiOutlineEye } from 'react-icons/ai';
-import { BsEyeFill, BsEyeSlash, BsEyeSlashFill } from 'react-icons/bs';
+"use client";
+
+import React, {useState } from 'react';
 import { PiEyeBold, PiEyeSlashBold } from 'react-icons/pi';
 
 interface IInputProps {
