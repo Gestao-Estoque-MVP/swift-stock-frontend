@@ -29,14 +29,18 @@ const LoginPage = () => {
   const submitLogin = async(data: TLogin) => {
     try{
       const res = await login({
-        variables: data
+        variables: {
+          email: data.email,
+          password: data.password
+        }
       })
 
+      console.log(res);
       if(res.data?.login){
         return toast.success("Login feito com sucesso!");
       }
-    }catch(err) {
-      console.log(err);
+    }catch(error: unknown) {
+      return toast.error("Email ou Senha incorretos");
     }
   }
 
@@ -48,7 +52,7 @@ const LoginPage = () => {
               {
                 errors.email && <small className="-translate-y-4 text-error-200">{errors.email.message}</small>
               }
-              <Input type='password' id='password' placeholder='Insira sua Senha' label='Password'  register={register("password")} />
+              <Input type='password' id='email' placeholder='Insira sua Senha' label='Password'  register={register("password")} />
               {
                 errors.password && <small className="-translate-y-4 text-error-200">{errors.password.message}</small>
               }
