@@ -1,4 +1,4 @@
-import { preRegisterSchema } from './../../schemas/pre-register.schema';
+import { registerSchema } from './../../schemas/register.schema';
 import { z } from "zod";
 
-export type TPreRegister = z.infer<typeof preRegisterSchema>;
+export type TRegister = z.infer<typeof registerSchema>;
