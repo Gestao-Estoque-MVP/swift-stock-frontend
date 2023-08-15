@@ -9,16 +9,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { preRegisterSchema } from "@/schemas/pre-register.schema";
 import { useRouter } from "next/navigation";
 import { TPreRegister } from "@/interfaces/pre-register.interface";
+import { useEffect } from "react";
 
 
 const PreRegisterPage = () => {
     const userToken = nookies.get()["@swift-stock: user-token"];
     const router = useRouter();
 
-
-    if(!userToken){
-        router.push("/login");
-    }
+    useEffect(() => {
+        if(!userToken){
+            router.push("/login");
+        }
+    })
 
     const {
         register,
