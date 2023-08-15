@@ -7,8 +7,8 @@ import nookies from "nookies";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { preRegisterSchema } from "@/schemas/pre-register.schema";
-import { TRegister } from "@/app/interfaces/pre-register.interface";
 import { useRouter } from "next/navigation";
+import { TPreRegister } from "@/interfaces/pre-register.interface";
 
 
 const PreRegisterPage = () => {
@@ -25,11 +25,11 @@ const PreRegisterPage = () => {
         handleSubmit,
         reset,
         formState: {errors}
-    } = useForm<TRegister>({
+    } = useForm<TPreRegister>({
         resolver: zodResolver(preRegisterSchema)
     });
     
-    const submitLogin = (data: TRegister) => {
+    const submitLogin = (data: TPreRegister) => {
         console.log(data);
     }
 
@@ -39,7 +39,7 @@ const PreRegisterPage = () => {
                 <form className="flex flex-col gap-5 mb-8" onSubmit={handleSubmit(submitLogin)}>
                     <Input label="Nome" id="name" type="text" placeholder="Insira o Nome do Usuário" register={register("name")}/>
                     {
-                        errors.name && <small className="-translate-y-4 text-error-200">{errors.name.message}</small>
+                        errors.name && <small className="-translate-y-4 text-error-200">{errors.name?.message}</small>
                     }
                     <Input label="email" id="email" type="email" placeholder="Insira o Email do Usuário" register={register("email")}/>
                     {

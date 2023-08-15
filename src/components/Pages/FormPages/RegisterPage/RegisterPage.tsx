@@ -5,7 +5,7 @@ import FormLayout from "../FormLayout/FormLayout";
 import Input from "@/components/Inputs/Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { TRegister } from "@/app/interfaces/pre-register.interface";
+import { TRegister } from "@/interfaces/pre-register.interface";
 import { registerSchema } from "@/schemas/register.schema";
 
 

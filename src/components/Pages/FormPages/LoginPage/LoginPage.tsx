@@ -5,7 +5,7 @@ import FormPage from '../FormPage/FormPage'
 import Input from '../../../Inputs/Input'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
-import { TLogin } from '@/app/interfaces/login.interface'
+import { TLogin } from '@/interfaces/login.interface'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from '@/schemas/login.schema'
 import FormLayout from '../FormLayout/FormLayout'
