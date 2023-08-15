@@ -7,7 +7,7 @@ import nookies from "nookies";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { preRegisterSchema } from "@/schemas/pre-register.schema";
-import { TPreRegister } from "@/app/interfaces/pre-register.interface";
+import { TRegister } from "@/app/interfaces/pre-register.interface";
 import { useRouter } from "next/navigation";
 
 
