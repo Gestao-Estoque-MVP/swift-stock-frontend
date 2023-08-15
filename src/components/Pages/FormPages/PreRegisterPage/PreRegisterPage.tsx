@@ -25,11 +25,11 @@ const PreRegisterPage = () => {
         handleSubmit,
         reset,
         formState: {errors}
-    } = useForm<TPreRegister>({
+    } = useForm<TRegister>({
         resolver: zodResolver(preRegisterSchema)
     });
     
-    const submitLogin = (data: TPreRegister) => {
+    const submitLogin = (data: TRegister) => {
         console.log(data);
     }
 
