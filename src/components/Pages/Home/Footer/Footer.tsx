@@ -1,5 +1,5 @@
 import Container from "@/components/Container/Container";
-import logoSvg from "../../../assets/logo-white.svg";
+import logoSvg from "../../../../assets/logo-white.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button/Button";
