@@ -13,15 +13,6 @@ import { useEffect } from "react";
 
 
 const PreRegisterPage = () => {
-    const userToken = nookies.get()["@swift-stock: user-token"];
-    const router = useRouter();
-
-    useEffect(() => {
-        if(!userToken){
-            router.push("/login");
-        }
-    })
-
     const {
         register,
         handleSubmit,
