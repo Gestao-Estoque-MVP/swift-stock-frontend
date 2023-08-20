@@ -2,7 +2,7 @@
 
 import React from 'react'
 import FormPage from '../FormPage/FormPage'
-import Input from '../../../Inputs/Input'
+import {Input} from '../../../Inputs/Input'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { TLogin } from '@/interfaces/login.interface'

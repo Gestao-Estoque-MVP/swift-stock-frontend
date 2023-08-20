@@ -2,7 +2,7 @@
 
 import FormPage from "@/components/Pages/FormPages/FormPage/FormPage";
 import FormLayout from "../FormLayout/FormLayout";
-import Input from "@/components/Inputs/Input";
+import {Input} from "@/components/Inputs/Input";
 import nookies from "nookies";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
