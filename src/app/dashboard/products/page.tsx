@@ -39,7 +39,7 @@ const Products = () => {
                 </div>
 
                 <div className="mt-[38px]">
-                    <Table itens={itens} />
+                    <Table itens={itens} state={""} />
                 </div>
             </div>
 
