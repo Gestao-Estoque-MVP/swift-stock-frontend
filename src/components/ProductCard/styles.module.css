@@ -1,0 +1,41 @@
+.card
+{
+        /* height: 203px; */
+        background-color: white;
+        
+        width: 320.78px;
+        font-size: 18px;
+     
+
+        border-radius: 14px;
+
+}
+
+
+.card-infor {
+        padding: 31px;
+}
+
+.count {
+        font-size: 38px;
+        font-weight: bold;
+        margin-top: 22px;
+}
+
+
+
+.bottom-infor {
+        display: flex;
+        padding: 19px 29px;
+        color: white;
+        border-radius: 0px 0px 14px 14px;
+}
+
+.bg-bad {
+        background: #FF4A55;
+
+}
+
+.bg-good {
+        background:#3026DC;
+}
