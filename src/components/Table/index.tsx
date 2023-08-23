@@ -3,7 +3,7 @@
 
 
 import { MaterialReactTable } from 'material-react-table'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef } from 'react'
 import { type MRT_ColumnDef } from 'material-react-table'
 import { MRT_Localization_PT } from 'material-react-table/locales/pt';
 
@@ -24,6 +24,7 @@ interface ITable {
     qtd: number
     stock: number
     estoque: string
+    imageUrl: string
 }
 
 
@@ -47,7 +48,7 @@ export const Table = ({ itens }: TableProps) => {
                 header: "Nome",
                 accessorKey: "infor",
                 Cell: (value) => <div className="flex items-center gap-4 font-bold">
-                    <img src={value.renderedCellValue.imageUrl} className="rounded-[14px]" alt="product" style={{ width: '49px', height: '49px' }} />
+                    <img src={value?.renderedCellValue?.imageUrl} className="rounded-[14px]" alt="product" style={{ width: '49px', height: '49px' }} />
                     <h1>{value.renderedCellValue.name}</h1>
                 </div>
             },
@@ -73,7 +74,7 @@ export const Table = ({ itens }: TableProps) => {
                 accessorKey: "estoque",
 
                 Cell: (value) => <>
-                    <ProductStatus state={value.renderedCellValue}> {value} </ProductStatus>
+                    <ProductStatus state={value?.renderedCellValue}> {value} </ProductStatus>
                 </>
             }
         ],
