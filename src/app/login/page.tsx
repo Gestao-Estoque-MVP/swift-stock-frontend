@@ -1,14 +1,12 @@
-import LoginPage from "@/components/LoginPage/LoginPage"
+import LoginPage from "@/components/Pages/FormPages/LoginPage/LoginPage"
 
 
-const HomePage = () => {
+const Login = () => {
   return (
-    <>
     <main>
      <LoginPage/>
     </main>
-    </>
   )
 }
 
-export default HomePage
+export default Login;

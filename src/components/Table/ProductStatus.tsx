@@ -1,22 +1,17 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
+export type StateKeys = "completo" | "baixo" | "vazio" | "medio";
 interface IFormPageProps {
   children: React.ReactNode,
-  state: string,
+  state: StateKeys,
 }
 
-
-
-
-const states = {
+const states: Record<StateKeys, { color: string, bg: string, text: string }> = {
   "completo": { color: "#3026DC", bg: "#DFEDF2",text:"Completo" },
   "baixo": { color: "#FFAB2D", bg: "rgba(255, 235, 204, 0.50)", text:"Baixo" },
-  "vazio": { color: "#FF4A55", bg: "gba(255, 74, 85, 0.25)",text:"Vazio" },
+  "vazio": { color: "#FF4A55", bg: "rgba(255, 74, 85, 0.25)",text:"Vazio" },
   "medio": { color: "#36C633", bg: "#EBFCEF",text:"Médio"},
 }
-
-
-
 
 const ProductStatus = ({ children, state }: IFormPageProps) => {
   return (

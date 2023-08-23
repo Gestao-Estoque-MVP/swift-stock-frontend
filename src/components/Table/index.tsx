@@ -9,7 +9,7 @@ import { MRT_Localization_PT } from 'material-react-table/locales/pt';
 
 
 
-import ProductStatus from './ProductStatus'
+import ProductStatus, { StateKeys } from './ProductStatus'
 
 type TableProps = {
     itens: any,
@@ -17,6 +17,8 @@ type TableProps = {
 }
 
 interface ITable {
+    imageUrl: string
+    name: string
     infor: object
     categoria: string
     entrada: string
@@ -24,7 +26,6 @@ interface ITable {
     qtd: number
     stock: number
     estoque: string
-    imageUrl: string
 }
 
 
@@ -35,10 +36,6 @@ const states = {
     "medio" : {color:"36C633", bg:""},
   }
   
-  
-
-
-
 
 export const Table = ({ itens }: TableProps) => {
     const data: ITable[] = itens;
@@ -46,11 +43,16 @@ export const Table = ({ itens }: TableProps) => {
         () => [
             {
                 header: "Nome",
-                accessorKey: "infor",
-                Cell: (value) => <div className="flex items-center gap-4 font-bold">
-                    <img src={value?.renderedCellValue?.imageUrl} className="rounded-[14px]" alt="product" style={{ width: '49px', height: '49px' }} />
-                    <h1>{value.renderedCellValue.name}</h1>
-                </div>
+                accessorFn: (row: ITable) =>  ({ imageUrl: row.imageUrl, name: row.name }),  
+                Cell: (value) => {
+                    const data = value?.renderedCellValue as unknown as { imageUrl: string, name: string }
+                    return (
+                        <div className="flex items-center gap-4 font-bold">
+                            <img src={data?.imageUrl} className="rounded-[14px]" alt="product" style={{ width: '49px', height: '49px' }} />
+                            <h1>{data?.name}</h1>
+                        </div>
+                    );
+                }
             },
             {
                 header: "Categoria",
@@ -74,7 +76,7 @@ export const Table = ({ itens }: TableProps) => {
                 accessorKey: "estoque",
 
                 Cell: (value) => <>
-                    <ProductStatus state={value?.renderedCellValue}> {value} </ProductStatus>
+                   <ProductStatus state={value?.renderedCellValue as StateKeys || ''}>{value?.renderedCellValue}</ProductStatus>
                 </>
             }
         ],
