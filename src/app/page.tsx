@@ -1,11 +1,11 @@
-import About from "@/components/Home/About/About";
-import Competencies from "@/components/Home/Competencies/Competencies";
-import Contact from "@/components/Home/Contact/Contact";
-import Footer from "@/components/Home/Footer/Footer";
-import Header from "@/components/Home/Header/Header";
-import Heading from "@/components/Home/Heading/Heading";
-import HomeForm from "@/components/Home/HomeForm/HomeForm";
-import { Analytics } from '@vercel/analytics/react';
+import About from "@/components/Pages/Home/About/About";
+import {Analytics} from '@vercel/analytics/react';
+import Competencies from "@/components/Pages/Home/Competencies/Competencies";
+import HomeForm from "@/components/Pages/Home/HomeForm/HomeForm";
+import Contact from "@/components/Pages/Home/Contact/Contact";
+import Heading from "@/components/Pages/Home/Heading/Heading";
+import Header from "@/components/Pages/Home/Header/Header";
+import Footer from "@/components/Pages/Home/Footer/Footer";
 
 const HomePage = () => {
   return (
