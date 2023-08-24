@@ -1,6 +1,9 @@
+import SideBar from "@/components/Dashboard/Sidebar/SideBar"
 
 const DashboardPage = () => {
-    return <h1 className="text-brand-400">Dashboard Page</h1>
+    return <>
+        <SideBar/>
+    </>
 }
   
 export default DashboardPage
