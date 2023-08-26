@@ -32,10 +32,23 @@ const REGISTER_TOKEN_MUTATION = gql`
     verifyToken(input: {
         token: $token
     }) {
-        verifyToken
+      verifyToken
     }
   }
 `
 
 
-export { CREATE_CONTACT_MUTATION, LOGIN_MUTATION, REGISTER_TOKEN_MUTATION };
+const PRE_USER_MUTATION = gql`
+  mutation CreatePreUser($name: String!, $email: String!, $status: String!){
+    createPreUser(input: {
+        name: $name,
+        email: $email,
+        status: $status
+    }) {
+      id
+    }
+  }
+`
+
+
+export { CREATE_CONTACT_MUTATION, LOGIN_MUTATION, REGISTER_TOKEN_MUTATION, PRE_USER_MUTATION };

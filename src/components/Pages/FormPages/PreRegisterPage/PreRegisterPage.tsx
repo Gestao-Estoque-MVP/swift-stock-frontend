@@ -10,6 +10,8 @@ import { preRegisterSchema } from "@/schemas/pre-register.schema";
 import { useRouter } from "next/navigation";
 import { TPreRegister } from "@/interfaces/pre-register.interface";
 import { useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import { PRE_USER_MUTATION } from "@/graphql/mutation/mutation";
 
 
 const PreRegisterPage = () => {
@@ -22,8 +24,22 @@ const PreRegisterPage = () => {
         resolver: zodResolver(preRegisterSchema)
     });
     
-    const submitLogin = (data: TPreRegister) => {
-        console.log(data);
+    const [createPreUser] = useMutation(PRE_USER_MUTATION)
+
+    const submitLogin = async(data: TPreRegister) => {
+        try{
+            const res = await createPreUser({
+                variables: {
+                    name: data.name,
+                    email: data.email,
+                    status: "pre-users"
+                }
+            }) 
+
+            console.log(res)
+        }catch(err){
+            console.log(err)
+        }
     }
 
     return(
