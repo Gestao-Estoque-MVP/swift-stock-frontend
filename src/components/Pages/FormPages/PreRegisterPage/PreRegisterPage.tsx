@@ -12,6 +12,7 @@ import { TPreRegister } from "@/interfaces/pre-register.interface";
 import { useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { PRE_USER_MUTATION } from "@/graphql/mutation/mutation";
+import { cookies } from "next/dist/client/components/headers";
 
 
 const PreRegisterPage = () => {
@@ -24,6 +25,9 @@ const PreRegisterPage = () => {
         resolver: zodResolver(preRegisterSchema)
     });
     
+
+    const userToken = nookies.get()["@swift-stock: user-token"];
+    
     const [createPreUser] = useMutation(PRE_USER_MUTATION)
 
     const submitLogin = async(data: TPreRegister) => {
@@ -33,6 +37,11 @@ const PreRegisterPage = () => {
                     name: data.name,
                     email: data.email,
                     status: "pre-users"
+                },
+                context: {
+                    headers: {
+                        Authorization: `Bearer ${userToken}`
+                    }
                 }
             }) 
 
