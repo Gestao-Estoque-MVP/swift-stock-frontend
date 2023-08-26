@@ -7,10 +7,36 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/schemas/register.schema";
 import { TRegister } from "@/interfaces/register.interface";
+import { useParams, useRouter } from "next/navigation";
+import { useMutation } from "@apollo/client";
+import { REGISTER_TOKEN_MUTATION } from "@/graphql/mutation/mutation";
+import { useEffect } from "react";
 
 
 const RegisterPage = () => {
 
+    const router = useParams();
+
+    const { token } = router;
+
+    const [verifyToken] = useMutation(REGISTER_TOKEN_MUTATION);
+    useEffect(() => {
+        const ensureTokenExists = async() => {
+            try{
+                const res = await verifyToken({
+                    variables:{
+                        token: token
+                    }
+                })
+        
+                console.log(res)
+            }catch(err) {
+                console.log(err)
+            }
+        }
+        ensureTokenExists()
+    }, [])
+ 
     const {
         register,
         handleSubmit,
@@ -28,7 +54,7 @@ const RegisterPage = () => {
         <FormPage>
             <FormLayout title="Olá, Nome do Usuário!">
                 <form className="flex flex-col gap-5 mb-8" onSubmit={handleSubmit(submitLogin)}>
-                    <Input label="Telefone" id="name" type="text" placeholder="Insira o Número de Telefone" register={register("phone")}/>
+                    <Input label="Telefone" id="name" type="text" placeholder="Insira o Número de Telefonea" register={register("phone")}/>
                     {
                         errors.phone && <small className="-translate-y-4 text-error-200">{errors.phone.message}</small>
                     }

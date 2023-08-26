@@ -26,4 +26,16 @@ const LOGIN_MUTATION = gql`
   }
 `
 
-export { CREATE_CONTACT_MUTATION, LOGIN_MUTATION };
+
+const REGISTER_TOKEN_MUTATION = gql`
+  mutation VerifyToken($token: String!){
+    verifyToken(input: {
+        token: $token
+    }) {
+        verifyToken
+    }
+  }
+`
+
+
+export { CREATE_CONTACT_MUTATION, LOGIN_MUTATION, REGISTER_TOKEN_MUTATION };
