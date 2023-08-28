@@ -13,8 +13,13 @@ import { FiLogOut } from 'react-icons/fi'
 
 import Link from 'next/link';
 
-const SideBar = () => {
+type SideBarProps = {
+  onMenuClick: (menu: string) => void
+}
+
+const SideBar = ({onMenuClick}: SideBarProps) => {
   return (
+    <>
     <section className='max-w-xs bg-white-total shadow-lg h-screen px-6 py-8 flex flex-col'>
       <header className='flex justify-start mb-16'>
        <Link href={"/"}>
@@ -24,14 +29,14 @@ const SideBar = () => {
 
       <ul className='font-default-font flex flex-col gap-2 h-full'>
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"#"} className='flex gap-3 items-center' onClick={()=>onMenuClick('dashboard')}>
             <BiSolidDashboard size={24}/>
             <p className='text-base font-semibold capitalize'>Dashboard</p>
           </Link>
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-         <Link href={"#"} className='flex gap-3 items-center'>
+         <Link href={"dashboard/products"} className='flex gap-3 items-center' onClick={(e)=> {e.preventDefault(); onMenuClick('products')}}>
           <PiBagFill size={24}/>
           <p className='text-base font-semibold capitalize'>Produtos</p>
          </Link>
@@ -84,6 +89,8 @@ const SideBar = () => {
         <FiLogOut size={24} className='text-grey-200 cursor-pointer'/>
       </footer>
     </section>
+  
+    </>
   )
 }
 
