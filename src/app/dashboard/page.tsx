@@ -1,9 +1,28 @@
-import SideBar from "@/components/Dashboard/Sidebar/SideBar"
+'use client'
+import Layout from "@/components/Layout/input";
+import Products from "./products/page";
+import { useState } from 'react';
+
 
 const DashboardPage = () => {
-    return <>
-        <SideBar/>
-    </>
+    
+    const [activeContent, setActiveContent] = useState('');
+    const renderContent = () => {
+        switch (activeContent) {
+            case 'products':
+                return <Products />;
+            case 'dashboard':
+                return <></>;
+            default:
+                return <></>;
+        }
+    };
+    
+    return (
+        <Layout onMenuClick={setActiveContent}>
+            {renderContent()}
+        </Layout>
+    )
 }
   
 export default DashboardPage
