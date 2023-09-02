@@ -25,7 +25,7 @@ const SideBar = () => {
 
       <ul className='font-default-font flex flex-col gap-2 h-full'>
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"/dashboard"} className='flex gap-3 items-center'>
             <BiSolidDashboard size={24}/>
             <p className='text-base font-semibold capitalize'>Dashboard</p>
           </Link>
