@@ -22,8 +22,12 @@
     "dotenv": "^16.3.1",
     "graphql": "^16.7.1",
     "install": "^0.13.0",
+<<<<<<< HEAD
     "jsonwebtoken": "^9.0.1",
     "jwt-decode": "^3.1.2",
+=======
+    "material-react-table": "^1.14.0",
+>>>>>>> b3c4311f54d82482b612eac3bead0b052521eccb
     "next": "13.4.10",
     "nookies": "^2.5.2",
     "postcss": "8.4.26",
