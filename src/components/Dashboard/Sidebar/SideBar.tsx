@@ -32,42 +32,42 @@ const SideBar = () => {
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-         <Link href={"dashboard/products"} className='flex gap-3 items-center'>
+         <Link href={"/dashboard/products"} className='flex gap-3 items-center'>
           <PiBagFill size={24}/>
           <p className='text-base font-semibold capitalize'>Produtos</p>
          </Link>
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"/dashboard/users"} className='flex gap-3 items-center'>
             <BiSolidUser size={24}/>
             <p className='text-base font-semibold capitalize'>Usuários</p>
           </Link>
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"/dashboard/files"} className='flex gap-3 items-center'>
             <AiOutlinePaperClip size={24}/>
             <p className='text-base font-semibold capitalize'>Arquivos</p>
           </Link>
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"/dashboard/history"} className='flex gap-3 items-center'>
             <AiOutlineBarcode size={24}/>
             <p className='text-base font-semibold capitalize'>Registros</p>
           </Link>
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"/dashboard/notifications"} className='flex gap-3 items-center'>
             <IoMdNotifications size={24}/>
             <p className='text-base font-semibold capitalize'>Notificações</p>
           </Link>
         </li>
 
         <li className='text-grey-200 px-4 py-2 rounded-xl hover:text-brand-200 hover:bg-brand-700'>
-          <Link href={"#"} className='flex gap-3 items-center'>
+          <Link href={"/dashboard/config"} className='flex gap-3 items-center'>
             <BsFillGearFill size={24}/>
             <p className='text-base font-semibold capitalize'>Configurações</p>
           </Link>
