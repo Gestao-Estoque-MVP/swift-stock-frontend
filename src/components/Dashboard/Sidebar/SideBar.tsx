@@ -79,7 +79,7 @@ const SideBar = ({onMenuClick}: SideBarProps) => {
       </ul>
 
       <footer className='flex items-center justify-between'>
-        <Link href="#" className='flex items-start gap-2'>
+        <Link href="/profile" className='flex items-start gap-2' onClick={(e)=> {e.preventDefault(); onMenuClick('profile')}}>
           <Image src={avatarImg} alt="Profile image"  className='rounded-lg w-12'/>
           <div className='font-default-font text-grey-200'>
             <h2 className='text-sm font-bold'>Bejamin A. Pomba</h2>

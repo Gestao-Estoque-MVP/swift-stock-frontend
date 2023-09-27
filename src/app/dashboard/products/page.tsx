@@ -29,7 +29,7 @@ const Products = () => {
 
     return (
         <>
-            <div className="p-24 max-w-[1600px] mx-auto ">
+            <div className="p-24 max-w-full mx-auto max-h-[100vh] overflow-auto">
                 <h1 className="text-brand-400">Dashboard Page</h1>
                 <div className="flex space-x-8 justify-between">
                     <ProductCard productCount={1000} bad={true} />

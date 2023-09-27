@@ -69,7 +69,7 @@ const ProfilePage = () => {
 
 
     return (
-        <div className="flex p-[47px] justify-between max-w-[920px] flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">
+        <div className="flex p-[47px] justify-between max-w-full flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">
             <div className="flex flex-col w-full md:w-auto max-h-full">
                 <div className="flex gap-[40px]">
                     <div className="relative">

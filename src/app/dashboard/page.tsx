@@ -2,6 +2,9 @@
 'use client'
 import Layout from "@/components/Layout/input";
 import Products from "./products/page";
+
+import Profile from "../profile/page";
+
 import { useState } from 'react';
 
 
@@ -14,6 +17,11 @@ const DashboardPage = () => {
                 return <Products />;
             case 'dashboard':
                 return <></>;
+
+            case 'profile':
+                return <>
+                    <Profile />
+                </>;
             default:
                 return <></>;
         }
