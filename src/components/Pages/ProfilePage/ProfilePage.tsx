@@ -1,26 +1,92 @@
+"use client"
+
+import { ChangeEvent, useState } from "react";
 import Input from "../../Inputs/Input"
 
-const profileUrl = "https://i.postimg.cc/jqcvwqBV/image-2023-09-22-105500643.png"
-const companyImageUrl = "https://i.postimg.cc/J7699WML/image.png"
+
+
+
+const user = {
+    profileUrl: "https://i.postimg.cc/jqcvwqBV/image-2023-09-22-105500643.png",
+    companyImageUrl: "https://i.postimg.cc/J7699WML/image.png",
+    companyName: "Tesla Motors",
+    companySubname : "Tesla USA",
+    companyDescription: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut error, quasi animi esse eum nemo rerum vitae ad vel laudantium aliquid amet dolores placeat quae deleniti ex perspiciatis ipsum adipisci?",
+    username: "Elon Musk",
+    role: "admin",
+    enteredTime: new Date(),
+    staffCount: 8
+}
+
+
+
 
 const ProfilePage = () => {
+
+
+
+
+    const [userInputsTexts, setUserInputsTexts] = useState<{
+        token: string;
+        name: string;
+        email: string;
+        password: string;
+        phone: string;
+    }>({
+        token: "none",
+        name: "Nome do usuario",
+        email: "email",
+        password: "senha",
+        phone: "phone",
+      
+    });
+
+    // Função para atualizar o estado quando um campo de entrada (input) é alterado
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const { id, value } = event.target;
+
+        // Atualize o objeto com base no campo de entrada (input) que foi alterado
+        setUserInputsTexts((prevState) => ({
+            ...prevState,
+            [id]: value,
+        }));
+    };
+
+
+
+
+    const onCickSendAlterations = () => {
+        const payload = JSON.stringify(userInputsTexts, null, 2);
+        alert(payload)
+    }
+
+
+
+
+
+
+
+
+
     return (
-        <div className="flex p-[47px] justify-between max-w-[1100px] m-auto flex-wrap md:flex-nowrap">
-            <div className="flex flex-col w-full md:w-auto">
+        <div className="flex p-[47px] justify-between max-w-[920px] flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">
+            <div className="flex flex-col w-full md:w-auto max-h-full">
                 <div className="flex gap-[40px]">
                     <div className="relative">
-                        <img src={profileUrl} width="180px" className="rounded-full"></img>
+                        <img src={user.profileUrl} width="180px" className="rounded-full"></img>
 
-                        <div className="bg-[#3026DC;] p-2 radius-md-full md:w-[58px] md:h-[58px] flex items-center justify-center rounded-full " style={{ position: "absolute", top: "50%", left: "100%", transform: "translate(-50%, -50%)" }}>
-                            <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="18.6687" y="-1" width="11.2528" height="27.2035" transform="rotate(43.0849 18.6687 -1)" fill="white" />
-                            </svg>
+                        <div className="bg-[#3026DC;] p-2 radius-md-full flex items-center justify-center rounded-full " style={{ position: "absolute", top: "50%", left: "100%", transform: "translate(-50%, -50%)" }}>
+
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="15.6687" y="-4" width="11.2528" height="27.2035" transform="rotate(43.0849 15.6687 -4)" fill="white"/>
+</svg>
+
 
                         </div>
                     </div>
-                    <div className="flex flex-col gap-2 justify-center w-full md:max-w-full w-[450px]">
+                    <div className="flex flex-col gap-2 justify-center w-full md:max-w-full w-[450px] ">
                         <h1 className="font-bold">
-                            Elon Musk
+                            {user.username}
                         </h1>
                         <div className="flex">
                             <div>
@@ -29,7 +95,7 @@ const ProfilePage = () => {
                                 </svg>
                             </div>
                             <p>
-                                Usuário Admin
+                                {user.role =="admin" ? "Usuário Admin":"User "}
                             </p>
                         </div>
                         <div className="flex">
@@ -41,7 +107,7 @@ const ProfilePage = () => {
 
                             </div>
                             <p>
-                                Entrou dia 03/09/2023
+                                Entrou dia {user.enteredTime.toDateString()}
                             </p>
                         </div>
                     </div>
@@ -49,16 +115,42 @@ const ProfilePage = () => {
 
 
                 </div>
-                <div className="md:p-[50px] ">
+                <div className="md:py-[40px] md:px-[20px] max-h-full">
                     <div className="flex flex-col mt-[102px] gap-3">
                         <h1 className="font-bold text-md">Editar Perfil</h1>
-                        <Input type="text" id="name" label="Nome"></Input>
-                        <Input type="email" id="email" label="Email"></Input>
-                        <Input type="phone" id="phone" label="Telefone"></Input>
-                        <Input type="password" id="password" label="Senha"></Input>
+                        <Input
+                            type="text"
+                            id="name"
+                            label="Nome"
+                            value={userInputsTexts.name}
+                            onChange={handleInputChange}
+                        />
+                        <Input
+                            type="email"
+                            id="email"
+                            label="Email"
+                            value={userInputsTexts.email}
+                            onChange={handleInputChange}
+                        />
+                        <Input
+                            type="tel"
+                            id="phone"
+                            label="Telefone"
+                            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+
+                            value={userInputsTexts.phone}
+                            onChange={handleInputChange}
+                        />
+                        <Input
+                            type="password"
+                            id="password"
+                            label="Senha"
+                            value={userInputsTexts.password}
+                            onChange={handleInputChange}
+                        />
                     </div>
                     <div className="flex w-full mt-8">
-                        <button className="border p-4 w-full rounded-lg" style={{ color: "#3026DC" }}>
+                        <button className="border p-4 w-full rounded-lg " style={{ color: "#3026DC" }} onClick={onCickSendAlterations}>
                             Salvar alterações
                         </button>
 
@@ -68,7 +160,7 @@ const ProfilePage = () => {
                     </div>
 
                     <p className="mt-4">
-                    Última Alteração 03/09/2023
+                        Última Alteração 03/09/2023
                     </p>
                 </div>
 
@@ -78,15 +170,15 @@ const ProfilePage = () => {
 
 
             <hr className="md:hidden"></hr>
-            <div className=" w-full md:max-w-[420px] mt-24 md:mt-0">
+            <div className=" w-full md:max-w-[420px] mt-24 md:mt-0 max-h-full">
 
                 <div>
                     <div className="flex gap-12">
-                        <img src={companyImageUrl} width="100">
+                        <img src={user.companyImageUrl} width="100">
                         </img>
                         <div className="flex flex-col justify-center">
-                            <h1>Tesla Motors</h1>
-                            <p>Texas - USA</p>
+                            <h1 className="font-bold">{user.companyName}</h1>
+                            <p>{user.companySubname}</p>
                         </div>
                     </div>
 
@@ -98,14 +190,15 @@ const ProfilePage = () => {
                                 <rect x="24.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" stroke-width="3" />
                                 <rect x="46.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" stroke-width="3" />
                             </svg>
-                            <p>8 funcionários da Tesla usam SwiftStock</p>
+
+                            <p>{user.staffCount} funcionários da Tesla usam SwiftStock</p>
                         </div>
 
                     </div>
                 </div>
                 <div>
                     <div className="mt-[59px]">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cumque. Adipisci temporibus laudantium omnis est. Quae voluptatem consequuntur nesciunt pariatur dignissimos cum excepturi, facilis libero, maxime aut dolore nemo veritatis!
+                        {user.companyDescription}
                     </div>
                 </div>
 

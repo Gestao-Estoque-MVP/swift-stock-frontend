@@ -6,12 +6,15 @@ import { PiEyeBold, PiEyeSlashBold } from 'react-icons/pi';
 interface IInputProps {
   label: string;
   id: string;
-  type: string;
+  pattern?: string;
+  type?: string;
+  value: string;
+  onChange?: any;
   placeholder?: string;
   register?: object;
 }
 
-const Input = ({ label, id, type, placeholder, register, ...props }: IInputProps) => {
+const Input = ({ label, id, pattern, type, value, placeholder, register,onChange, ...props }: IInputProps) => {
   const [inputType, setInputType] = useState(type || "text");
 
   const handlePasswordType = () => {
@@ -24,6 +27,10 @@ const Input = ({ label, id, type, placeholder, register, ...props }: IInputProps
       <div className='rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
       hover:border-brand-200 hover:border-solid border-[3px]'>
         <input placeholder={placeholder} className='w-full py-4 bg-transparent outline-0'
+        pattern={pattern || ""}
+        onChange={onChange || ""}
+
+        value={value || ""}
           type={inputType} id={id} name={id}
           {...register} {...props}
         />
