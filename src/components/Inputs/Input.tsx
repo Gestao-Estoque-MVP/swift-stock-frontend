@@ -28,8 +28,6 @@ const Input = ({ label, id, pattern, type, value, placeholder, register,onChange
       hover:border-brand-200 hover:border-solid border-[3px]'>
         <input placeholder={placeholder} className='w-full py-4 bg-transparent outline-0'
         pattern={pattern || ""}
-        onChange={onChange || ""}
-
         value={value || ""}
           type={inputType} id={id} name={id}
           {...register} {...props}

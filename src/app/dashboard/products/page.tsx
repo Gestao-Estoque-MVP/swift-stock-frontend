@@ -31,7 +31,7 @@ const Products = () => {
         <>
             <div className="p-24 max-w-full mx-auto max-h-[100vh] overflow-auto">
                 <h1 className="text-brand-400">Dashboard Page</h1>
-                <div className="flex space-x-8 justify-between">
+                <div className="flex gap-8 justify-between overflow-auto max-w-full">
                     <ProductCard productCount={1000} bad={true} />
                     <ProductCard productCount={4000} bad={true} />
                     <ProductCard productCount={100} bad={true} />

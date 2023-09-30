@@ -19,7 +19,7 @@ type SideBarProps = {
 
 const SideBar = ({onMenuClick}: SideBarProps) => {
   return (
-    <>
+    <div className="flex">
     <section className='max-w-xs bg-white-total shadow-lg h-screen px-6 py-8 flex flex-col'>
       <header className='flex justify-start mb-16'>
        <Link href={"/"}>
@@ -90,7 +90,7 @@ const SideBar = ({onMenuClick}: SideBarProps) => {
       </footer>
     </section>
   
-    </>
+    </div>
   )
 }
 

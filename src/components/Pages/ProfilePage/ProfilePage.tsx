@@ -37,7 +37,7 @@ const ProfilePage = () => {
         name: "Nome do usuario",
         email: "email",
         password: "senha",
-        phone: "phone",
+        phone: "(00)88999-27394",
       
     });
 
@@ -69,7 +69,7 @@ const ProfilePage = () => {
 
 
     return (
-        <div className="flex p-[47px] justify-between max-w-full flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">
+        <div className="flex p-[47px] justify-around max-w-full flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">
             <div className="flex flex-col w-full md:w-auto max-h-full">
                 <div className="flex gap-[40px]">
                     <div className="relative">
@@ -186,9 +186,9 @@ const ProfilePage = () => {
 
                         <div className="flex items-center mt-12">
                             <svg width="78" height="33" viewBox="0 0 78 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" stroke-width="3" />
-                                <rect x="24.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" stroke-width="3" />
-                                <rect x="46.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" stroke-width="3" />
+                                <rect x="1.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" />
+                                <rect x="24.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white"  />
+                                <rect x="46.5" y="1.5" width="30" height="30" rx="15" fill="#D9D9D9" stroke="white" />
                             </svg>
 
                             <p>{user.staffCount} funcionários da Tesla usam SwiftStock</p>
