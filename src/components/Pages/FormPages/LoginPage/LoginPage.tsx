@@ -2,7 +2,7 @@
 
 import React from 'react'
 import FormPage from '../FormPage/FormPage'
-import Input from '../../../Inputs/Input'
+import {Input} from '../../../Inputs/Input'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { TLogin } from '@/interfaces/login.interface'
@@ -12,6 +12,7 @@ import FormLayout from '../FormLayout/FormLayout'
 import { useMutation } from '@apollo/client'
 import { LOGIN_MUTATION } from '@/graphql/mutation/mutation'
 import { toast } from 'react-toastify'
+import { setCookie } from 'nookies';
 
 
 const LoginPage = () => {
@@ -35,8 +36,12 @@ const LoginPage = () => {
         }
       })
 
-      console.log(res);
       if(res.data?.login){
+        setCookie(null, '@swift-stock: user-token', res.data.login.token, {
+          maxAge: 30 * 24 * 60 * 60,
+          path: '/', 
+        });
+
         return toast.success("Login feito com sucesso!");
       }
     }catch(error: unknown) {
