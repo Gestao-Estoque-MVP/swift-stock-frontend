@@ -26,4 +26,29 @@ const LOGIN_MUTATION = gql`
   }
 `
 
-export { CREATE_CONTACT_MUTATION, LOGIN_MUTATION };
+
+const REGISTER_TOKEN_MUTATION = gql`
+  mutation VerifyToken($token: String!){
+    verifyToken(input: {
+        token: $token
+    }) {
+      verifyToken
+    }
+  }
+`
+
+
+const PRE_USER_MUTATION = gql`
+  mutation CreatePreUser($name: String!, $email: String!, $status: String!){
+    createPreUser(input: {
+        name: $name,
+        email: $email,
+        status: $status
+    }) {
+      id
+    }
+  }
+`
+
+
+export { CREATE_CONTACT_MUTATION, LOGIN_MUTATION, REGISTER_TOKEN_MUTATION, PRE_USER_MUTATION };
