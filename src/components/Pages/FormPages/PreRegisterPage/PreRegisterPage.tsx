@@ -2,7 +2,7 @@
 
 import FormPage from "@/components/Pages/FormPages/FormPage/FormPage";
 import FormLayout from "../FormLayout/FormLayout";
-import Input from "@/components/Inputs/Input";
+import {Input} from "@/components/Inputs/Input";
 import nookies from "nookies";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,18 +10,12 @@ import { preRegisterSchema } from "@/schemas/pre-register.schema";
 import { useRouter } from "next/navigation";
 import { TPreRegister } from "@/interfaces/pre-register.interface";
 import { useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import { PRE_USER_MUTATION } from "@/graphql/mutation/mutation";
+import { cookies } from "next/dist/client/components/headers";
 
 
 const PreRegisterPage = () => {
-    const userToken = nookies.get()["@swift-stock: user-token"];
-    const router = useRouter();
-
-    useEffect(() => {
-        if(!userToken){
-            router.push("/login");
-        }
-    })
-
     const {
         register,
         handleSubmit,
@@ -31,8 +25,30 @@ const PreRegisterPage = () => {
         resolver: zodResolver(preRegisterSchema)
     });
     
-    const submitLogin = (data: TPreRegister) => {
-        console.log(data);
+
+    const userToken = nookies.get()["@swift-stock: user-token"];
+    
+    const [createPreUser] = useMutation(PRE_USER_MUTATION)
+
+    const submitLogin = async(data: TPreRegister) => {
+        try{
+            const res = await createPreUser({
+                variables: {
+                    name: data.name,
+                    email: data.email,
+                    status: "pre-users"
+                },
+                context: {
+                    headers: {
+                        Authorization: `Bearer ${userToken}`
+                    }
+                }
+            }) 
+
+            console.log(res)
+        }catch(err){
+            console.log(err)
+        }
     }
 
     return(
