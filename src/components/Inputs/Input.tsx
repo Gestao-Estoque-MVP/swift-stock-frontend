@@ -2,7 +2,7 @@
 
 import React, {useState } from 'react';
 import { PiEyeBold, PiEyeSlashBold } from 'react-icons/pi';
-import PhoneInput from 'react-phone-number-input'
+
 
 interface IInputProps {
   label: string;
@@ -15,7 +15,7 @@ interface IInputProps {
   children?: React.ReactNode; 
 }
 
-const Input = ({ label, id, type, value, placeholder, register,onChange, ...props }: IInputProps) => {
+export const Input = ({ label, id, type, placeholder, register, ...props }: IInputProps) => {
   const [inputType, setInputType] = useState(type || "text");
 
   const handlePasswordType = () => {
@@ -27,10 +27,7 @@ const Input = ({ label, id, type, value, placeholder, register,onChange, ...prop
       <label className='font-default-font text-sm uppercase font-semibold text-grey-100' htmlFor={id}>{label}</label>
       <div className='rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
       hover:border-brand-200 hover:border-solid border-[3px]'>
-
-        {}
         <input placeholder={placeholder} className='w-full py-4 bg-transparent outline-0'
-        value={value || ""}
           type={inputType} id={id} name={id}
           {...register} {...props}
         />

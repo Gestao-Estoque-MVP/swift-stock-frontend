@@ -1,7 +1,7 @@
 "use client"
 
 import { ChangeEvent, useState } from "react";
-import Input from "../../Inputs/Input"
+import { Input } from "@/components/Inputs/Input";
 import calendario from "../../../assets/calendario.svg"
 import caneta from "../../../assets/Caneta.svg"
 
@@ -9,8 +9,11 @@ import Image from "next/image";
 
 import Plan from "../../../components/ProfileInformation/Plan"
 import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input';
+import { useQuery } from "@apollo/client";
+import { GET_USER } from "@/graphql/query/user";
+import nookies from 'nookies';
 
-import PhoneInput from 'react-phone-number-input'
 
 
 
@@ -26,47 +29,39 @@ const user = {
     staffCount: 8
 }
 
-
-
-
-
 const ProfilePage = () => {
-
-
-
-
     const [userInputsTexts, setUserInputsTexts] = useState<{
-        token: string;
         name: string;
         email: string;
         password: string;
         phone: string;
     }>({
-        token: "none",
         name: "Nome do usuario padrão",
         email: "example@email.com",
         password: "password",
         phone: "55 88999-27394",
 
     });
-
-
-
+    
+    const userToken = nookies.get()["@swift-stock: user-token"];
+    const { loading, error, data } = useQuery(GET_USER, {
+        context:{
+            headers: {
+                Authorization: `Bearer ${userToken}`, 
+            },
+        }
+    });
 
     const cancelEditClickHandler = () => {
         alert("CANCELATION")
-
         setUserInputsTexts(
             {
-                token: "none",
-                name: "Nome do usuario padrão",
-                email: "example@email.com",
+                name: data?.user.name,
+                email: data?.user.email,
                 password: "password",
-                phone: "55 88999-27394",
+                phone: data?.user.user_phone[0].number,
             }
-        )
-
-
+        )   
     }
 
 
@@ -82,24 +77,18 @@ const ProfilePage = () => {
     };
 
 
-
-
-
     const onCickSendAlterations = () => {
         const payload = JSON.stringify(userInputsTexts, null, 2);
         alert(payload)
     }
 
 
-
-
-
-
-
-
-
     return (
-        <div className="flex p-[47px] justify-around max-w-full flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">
+        <>
+        {loading && <p>Carregando...</p>} 
+        {error && <p>Erro ao carregar os dados: {error.message}</p>}
+        {!loading && !error && (
+        <div className="flex p-[47px] justify-around max-w-full flex-wrap md:flex-nowrap object-cover text-base max-h-[100vh] overflow-auto">           
             <div className="flex flex-col w-full md:w-auto max-h-full">
                 <div className="flex gap-[40px]">
                     <div className="relative">
@@ -112,7 +101,7 @@ const ProfilePage = () => {
                     </div>
                     <div className="flex flex-col gap-2 justify-center w-full md:max-w-full w-[450px] ">
                         <h1 className="font-bold">
-                            {user.username}
+                            {data?.user.name}
                         </h1>
                         <div className="flex">
                             <div>
@@ -147,14 +136,14 @@ const ProfilePage = () => {
                             type="text"
                             id="name"
                             label="Nome"
-                            value={userInputsTexts.name}
+                            value={data.user.name}
                             onChange={handleInputChange}
                         />
                         <Input
                             type="email"
                             id="email"
                             label="Email"
-                            value={userInputsTexts.email}
+                            value={data.user.email}
                             onChange={handleInputChange}
                         />
                         {/* <Input
@@ -170,7 +159,7 @@ const ProfilePage = () => {
                             TELEFONE
                         </label>
 
-                        <PhoneInput value={userInputsTexts.phone}
+                        <PhoneInput value={data.user.user_phone[0].number}
                         onChange={() => handleInputChange} className='w-full py-4 bg-transparent outline-0'>
 
                         </PhoneInput>
@@ -198,12 +187,7 @@ const ProfilePage = () => {
                         Última Alteração 03/09/2023
                     </p>
                 </div>
-
-
-
             </div>
-
-
             <hr className="md:hidden"></hr>
             <div className=" w-full md:max-w-[420px] mt-24 md:mt-0 max-h-full">
 
@@ -252,10 +236,8 @@ const ProfilePage = () => {
             </div>
 
         </div>
-
-
-
-
+)}
+        </>
     )
 }
 

@@ -1,12 +1,6 @@
 'use client'
 import Layout from "@/components/Layout/input";
 import Products from "./products/page";
-import { useState } from 'react';
-
-
-'use client'
-import Layout from "@/components/Layout/input";
-import Products from "./products/page";
 
 import Profile from "../profile/page";
 

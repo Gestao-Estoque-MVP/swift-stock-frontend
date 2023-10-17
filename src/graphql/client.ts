@@ -10,7 +10,11 @@ export const { getClient } = registerApolloClient(() => {
   return new NextSSRApolloClient({
     cache: new NextSSRInMemoryCache(),
     link: new HttpLink({
-      uri: "https://swift-stock-api-jb2ymony6q-rj.a.run.app/graphql",
+      uri: "http://localhost:8080/graphql",
+      credentials: "include",
+      headers: {
+        'Content-Type': 'application/json',
+      }
     }),
   });
 });
