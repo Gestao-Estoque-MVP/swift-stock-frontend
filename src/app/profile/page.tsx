@@ -1,4 +1,5 @@
-import ProfilePage from "@/components/Pages/ProfilePage/ProfilePage";
+import ProfilePage from "@/Pages/ProfilePage/ProfilePage";
+
 
 const Register = () => {
     return(

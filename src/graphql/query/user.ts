@@ -9,6 +9,12 @@ export const GET_USER = gql`
             user_phone{
                 number
             }
+            role{
+                name
+            }
+            image{
+                url
+            }
         }
     }
 `;

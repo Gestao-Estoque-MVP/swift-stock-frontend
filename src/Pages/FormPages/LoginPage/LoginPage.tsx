@@ -2,7 +2,7 @@
 
 import React from 'react'
 import FormPage from '../FormPage/FormPage'
-import {Input} from '../../../Inputs/Input'
+
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { TLogin } from '@/interfaces/login.interface'
@@ -13,6 +13,7 @@ import { useMutation } from '@apollo/client'
 import { LOGIN_MUTATION } from '@/graphql/mutation/mutation'
 import { toast } from 'react-toastify'
 import { setCookie } from 'nookies';
+import { Input } from '@/components/Inputs/Text/Input'
 
 
 const LoginPage = () => {
