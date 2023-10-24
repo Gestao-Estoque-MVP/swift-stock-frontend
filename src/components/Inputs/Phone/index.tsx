@@ -16,18 +16,15 @@ export const InputPhone = ({id, label, onChange, placeholder, register, value}: 
     return (
         <div className='flex flex-col gap-2'>
             <label className='font-default-font text-sm uppercase font-semibold text-grey-100' htmlFor={id}>{label}</label>
-            <div className='rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 border-1 transition-all duration-200
-            border-brand-200 border-solid border-[3px]'>
+            <div className='relative flex items-center border-[3px] border-brand-200 rounded-lg bg-grey-50 p-3 transition-all duration-200'>
                 <input 
-                    placeholder={placeholder} 
-                    className='w-full py-4 bg-transparent outline-0'
+                    placeholder={placeholder}
+                    className='w-full py-1 bg-transparent outline-none focus:ring-0 focus:border-transparent'
                     type="tel" 
                     id={id} 
                     name={id}
                     value={value}
                     onChange={onChange}
-                    maxLength={15}
-                    {...register}
                 />
             </div>
         </div>

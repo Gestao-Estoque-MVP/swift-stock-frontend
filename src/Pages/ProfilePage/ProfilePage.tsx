@@ -11,8 +11,8 @@ import ImageUpload from "@/components/UploadImage";
 import Plan from "@/components/ProfileInformation/Plan";
 import { InputPhone } from "@/components/Inputs/Phone";
 import { LoadingScreen } from "@/components/Loading/input";
-
-
+import calendario from '../../assets/calendário.svg'
+import Image from "next/image";
 
 
 const user = {
@@ -34,9 +34,12 @@ const ProfilePage = () => {
             email: "",
             password: "",
             phone: "",
+            updatedAt: "",
+            createdAt: "",
         }
     });
-    
+    const [editData, setEditData] = useState(true)
+
     const userToken = nookies.get()["@swift-stock: user-token"];
     const { loading, error, data } = useQuery(GET_USER, {
         context:{
@@ -47,6 +50,8 @@ const ProfilePage = () => {
     });
   
     useEffect(() => {
+        let create = new Date(data?.user?.createdAt);
+        let update = new Date(data?.user?.updatedAt);
         setUserInputsTexts(
             {
                 user: {
@@ -54,6 +59,8 @@ const ProfilePage = () => {
                     email: data?.user.email,
                     password: "password",
                     phone: data?.user.user_phone[0].number,
+                    updatedAt: update.toLocaleDateString(),
+                    createdAt: create.toLocaleDateString(),
                 }
             }
         )
@@ -120,21 +127,16 @@ const ProfilePage = () => {
                           <div className="flex gap-1">
   
                               <div>
-                                  <button className="bg-[#ff0000]">DATE</button>
-  
-  
+                                <Image src={calendario} alt="Calendario"></Image>
                               </div>
                               <p>
-                                  Entrou dia {user.enteredTime.toDateString()}
+                                  Entrou dia {userInputsTexts.user.createdAt }
                               </p>
                           </div>
                       </div>
-  
-  
-  
                   </div>
-                  <div className="md:py-[40px] md:px-[20px] max-h-full">
-                      <div className="flex flex-col mt-[102px] gap-3">
+                  <div className="md:py-[40px] md:px-[25px] max-h-full">
+                      <div className="flex flex-col mt-[10px] gap-3">
                           <h1 className="font-bold text-md">Editar Perfil</h1>
                           <Input
                               type="text"
@@ -170,7 +172,7 @@ const ProfilePage = () => {
   
                       </div>
                       <div className="flex w-full mt-8">
-                          <button className="border p-4 w-full rounded-lg " style={{ color: "#3026DC" }} onClick={onCickSendAlterations}>
+                          <button className="border p-4 w-full rounded-lg " style={{ color: "#3026DC" }} onClick={onCickSendAlterations} disabled={editData}>
                               Salvar alterações
                           </button>
   
@@ -180,7 +182,11 @@ const ProfilePage = () => {
                       </div>
   
                       <p className="mt-4">
-                          Última Alteração 03/09/2023
+                          {
+                                userInputsTexts.user.updatedAt == '31/12/1' ?
+                                "Atualizado hoje" :
+                                `Atualizado em ${userInputsTexts.user.updatedAt}` 
+                          }
                       </p>
                   </div>
               </div>

@@ -6,6 +6,8 @@ export const GET_USER = gql`
             id
             name
             email
+            createdAt
+            updatedAt
             user_phone{
                 number
             }
