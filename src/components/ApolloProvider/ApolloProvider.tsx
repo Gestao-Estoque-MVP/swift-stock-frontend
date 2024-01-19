@@ -10,7 +10,7 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-      uri: "http://api.swiftstock.com.br/graphql",
+      uri: "https://api.swiftstock.com.br/graphql",
   });
 
   return new NextSSRApolloClient({

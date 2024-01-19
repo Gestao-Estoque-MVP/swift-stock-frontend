@@ -10,7 +10,7 @@ export const { getClient } = registerApolloClient(() => {
   return new NextSSRApolloClient({
     cache: new NextSSRInMemoryCache(),
     link: new HttpLink({
-      uri: "http://api.swiftstock.com.br/graphql",
+      uri: "https://api.swiftstock.com.br/graphql",
     }),
   });
 });
