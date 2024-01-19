@@ -1,9 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-
-import logoBlue from '../../../assets/logo-blue.svg'
-import avatarImg from '../../../assets/avatar.jpg'
-
 import { BiSolidDashboard, BiSolidUser } from 'react-icons/bi';
 import { PiBagFill } from 'react-icons/pi'
 import { AiOutlinePaperClip, AiOutlineBarcode } from 'react-icons/ai'
@@ -19,7 +15,8 @@ const SideBar = () => {
     <aside className='max-w-xs bg-white-total shadow-lg h-screen px-6 py-8 flex flex-col'>
       <header className='flex justify-start mb-16'>
        <Link href={"/"}>
-       <Image src={logoBlue} alt="Logo SwiftStock" />
+       <Image src="/public/avatar/logo-blue.svg" alt="Logo SwiftStock" width={75}
+                height={75}/>
        </Link>
       </header>
 
@@ -76,7 +73,8 @@ const SideBar = () => {
 
       <footer className='flex items-center justify-between'>
         <Link href="/profile" className='flex items-start gap-2' onClick={(e)=> {e.preventDefault()}}>
-          <Image src={avatarImg} alt="Profile image"  className='rounded-lg w-12'/>
+          <Image width={75}
+                height={75} src="/public/avatar/avatar.jpg" alt="Profile image"  className='rounded-lg w-12'/>
           <div className='font-default-font text-grey-200'>
             <h2 className='text-sm font-bold'>Bejamin A. Pomba</h2>
             <p className='text-xs'>Admin</p>

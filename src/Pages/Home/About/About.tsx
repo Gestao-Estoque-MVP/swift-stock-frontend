@@ -16,7 +16,8 @@ const About = () => {
                         <h2 data-aos="fade-up" className="text-brand-200 font-extrabold text-2xl mb-6">
                             Sobre a SwiftStock
                         </h2>
-                        <Image data-aos="fade-up" src={logoIcon} alt="logo da swift stock" className="mb-6"></Image>
+                        <Image width={75}
+                height={75} data-aos="fade-up" src="/public/avatar/logoIcon.svg" alt="logo da swift stock" className="mb-6"></Image>
                     </div>
                     <p data-aos="fade-up" className="text-grey-300 mb-9 text-sm leading-6">
                         Imagine poder acordar todas as manhãs sem se preocupar com a contagem do seu estoque ou ter medo de se
@@ -38,7 +39,7 @@ const About = () => {
             <figure data-aos="fade-up" data-aos-once="true" className="w-[90%] max-w-7xl h-[720px] overflow-auto bg-brand-400 rounded-2xl flex items-start justify-start
             shadow-2xl m-5 lg:hidden">
                 <img className=" w-full lg:w-full lg:h-auto object-cover"
-                src={swiftStockMobileUI.src}
+                src="/public/avatar/swifStockMobileUI.jpg"
                 alt="interface da SwiftStock"/>
             </figure>
 
@@ -49,7 +50,7 @@ const About = () => {
             <figure data-aos="fade-up" data-aos-once="true" className="w-[90%] max-w-7xl h-[720px] hidden overflow-auto bg-brand-400 rounded-2xl lg:flex items-start justify-start
             shadow-2xl m-5 lg:absolute lg:-right-[650px] 2xl:-right-[450px] lg:-top-28 lg:w-[1280px]">
                 <img className="h-full lg:w-full lg:h-auto object-cover"
-                src={swiftStockUI.src}
+                src="/public/avatar/swifStockUI.jpg"
                 alt="interface da SwiftStock"/>
             </figure>
 

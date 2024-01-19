@@ -52,7 +52,8 @@ const ImageUpload = () => {
 
     return (
         <label className="cursor-pointer">
-            <Image src={iconeCaneta} alt="caneta" width={20} height={20} color='white' />
+            <Image width={75}
+                height={75} src={iconeCaneta} alt="caneta" width={20} height={20} color='white' />
             <input 
                 type="file" 
                 required 

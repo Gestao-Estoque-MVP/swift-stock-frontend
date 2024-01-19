@@ -8,7 +8,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Footer = () => {
     return(
-        <footer className="bottom-0 w-screen h-96 bg-brand-400 py-8 bg-[url('../assets/blur.png')] bg-no-repeat lg:bg-cover">
+        <footer className="bottom-0 w-screen h-96 bg-brand-400 py-8 bg-[url('/public/avatar/blur.png')] bg-no-repeat lg:bg-cover">
             <Container className="relative  h-full">
 
                 <div className="group w-100 flex justify-center -translate-y-16">
@@ -22,7 +22,9 @@ const Footer = () => {
                 <div className="flex flex-col justify-between  h-full">
                     <div className="flex flex-col md:flex-row flex-wrap justify-between items-center gap-6">
                         <Link href="" data-aos="fade-right"> 
-                            <Image alt="Logo da SwiftStock" src={logoSvg}/>
+                            <Image width={75}
+                height={75} alt="Logo da SwiftStock" src="/public/avatar/logo-white.svg" width={75}
+                height={75}/>
                         </Link>
                         <nav className="text-white-primary flex-col gap-6">
                             <SocialMediaLinks/>

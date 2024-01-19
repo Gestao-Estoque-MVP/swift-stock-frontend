@@ -127,7 +127,8 @@ const ProfilePage = () => {
                           <div className="flex gap-1">
   
                               <div>
-                                <Image src={calendario} alt="Calendario"></Image>
+                                <Image width={75}
+                height={75} src={calendario} alt="Calendario"></Image>
                               </div>
                               <p>
                                   Entrou dia {userInputsTexts.user.createdAt }

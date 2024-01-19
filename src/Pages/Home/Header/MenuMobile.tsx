@@ -31,7 +31,8 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ modal, setModal })=> {
           <Link href={'/'} className='py-2 px-10 bg-brand-200 text-white-primary rounded-md font-bold uppercase'>Login</Link> 
         </nav>
 
-        <Image src="/avatar/logo-black.svg" alt='Logo SwiftStock'/>
+        <Image width={75}
+                height={75} src="/avatar/logo-black.svg" alt='Logo SwiftStock'/>
       </div>
     </div>
   )

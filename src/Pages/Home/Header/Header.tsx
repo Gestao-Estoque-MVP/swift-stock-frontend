@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {BiMenu} from 'react-icons/bi';
 import MenuMobile from "./MenuMobile";
-import logoWhiteSvg from "../../../../assets/logo-white.svg";
 import React, { useEffect } from "react";
 import Container from "@/components/Container/Container";
 
@@ -36,7 +35,9 @@ const Header = () => {
     <header className={`py-4 fixed top-0 w-full z-20 flex items-center justify-between ${scrollY > 200 ? "bg-brand-400" : ""} transition-all duration-500`}>
       <Container className="flex justify-between items-center">
 
-        <Link data-aos="fade-down" href={'/'}><Image src={logoWhiteSvg} alt="Logo da SwiftStock" className=" w-36 lg:w-auto"/></Link>
+        <Link data-aos="fade-down" href={'/'}><Image width={75}
+                height={75} src="/public/avatar/logo-white.svg" alt="Logo da SwiftStock" className=" w-36 lg:w-auto" width={75}
+                height={75}/></Link>
 
         <nav className="flex items-center gap-9 text-white-primary text-base capitalize font-default-font">
           <Link data-aos="fade-down" data-aos-delay="50" className="hidden lg:flex hover:text-brand-500" href={'#top'}>Início</Link>

@@ -13,7 +13,8 @@ const FormLayout = ({children, title}: IFormLayout) => {
         <>
         <section className='bg-white-primary w-full py-12 my-10 px-6  sm:rounded-xl max-w-lg mx-5'>
             <header className='flex flex-col items-center gap-5 mb-10'>
-            <Image src={logoBlue} alt='Logo SwiftStock'/>
+            <Image width={75}
+                height={75} src="/public/avatar/logo-blue.svg" alt='Logo SwiftStock'/>
             <h1 className='font-default-font text-grey-100 text-sm text-center'>
                 {
                     title || "Lorem Ipsum"

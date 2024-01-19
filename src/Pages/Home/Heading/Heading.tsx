@@ -4,7 +4,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Heading = () => {
     return(
-        <header id="top" className="h-screen w-screen bg-center bg-[url('../assets/headingBg.png')] bg-no-repeat bg-fixed bg-cover">
+        <header id="top" className="h-screen w-screen bg-center bg-[url('/public/avatar/headingBg.png')] bg-no-repeat bg-fixed bg-cover">
             <Container className="flex text-white-primary relative h-full flex-col justify-center items-center text-center">
                 <h1 data-aos="fade-up" className="font-extrabold text-4xl max-w-xl bg-headingGradient bg-clip-text text-transparent">
                     Controle seus estoques com <span className="text-brand-400">praticidade</span> e <span className="text-brand-400">eficiência</span>

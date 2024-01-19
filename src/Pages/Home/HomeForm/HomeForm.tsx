@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logoIcon from "../../../../assets/logoIcon.svg";
+// import logoIcon from "../../../../assets/logoIcon.svg";
 import Container from "@/components/Container/Container";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
@@ -65,7 +65,8 @@ const HomeForm = () => {
         <section id="participate">
             <Container className="flex justify-between items-center my-16">
                 <figure data-aos="flip-left" className="hidden md:flex md:w-[40%] md:justify-center md:items-center">
-                    <Image className="w-full h-full object-cover" src={logoIcon} alt="Swift Stock logo"/>
+                    <Image width={75}
+                height={75} className="w-full h-full object-cover" src="/public/avatar/logoIcon.svg" alt="Swift Stock logo"/>
                 </figure>
 
                 <div className="w-full md:w-[40%]">

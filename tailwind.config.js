@@ -10,7 +10,7 @@ module.exports = {
       backgroundImage: {
         headingGradient: 'radial-gradient(circle, #E4E4E4, #9AAFFF)',
         advantagesGradient: 'linear-gradient(to right, #E4E4E4, #9A9A9A)',
-        logoPattern: 'url("../assets/contact-bg.png")',
+        logoPattern: 'url("/public/avatar/contact-bg.png")',
         'radial-custom': 'radial-gradient(farthest-side,#766DF4 94%,transparent)',
       },
       animation: {

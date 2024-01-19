@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import dataCard from '../../../../../competenciesInfos.json';
+import dataCard from '@/Pages/Home/Competencies/competenciesInfos.json';
 import Card from '../Card/Card';
 import {CgGym} from "react-icons/cg";
 import { AiFillClockCircle, AiFillSignal } from 'react-icons/ai';
@@ -19,7 +19,7 @@ const Competencies = () => {
   }
 
   return (
-    <section id="advantages" className={`bg-brand-400 py-11 pt-20 relative bg-[url('../assets/blur.png')] bg-no-repeat bg-cover transition-all duration-300 ${!seeMore ? 'max-h-mobile md:max-h-desktop overflow-hidden' : 'h-fit'}  after:content-[""] after:w-full after:h-80 after:absolute after:bottom-0 after:z-10 after:bg-gradient-to-t from-brand-400 ...`}>
+    <section id="advantages" className={`bg-brand-400 py-11 pt-20 relative bg-[url('/public/avatar/blur.png')] bg-no-repeat bg-cover transition-all duration-300 ${!seeMore ? 'max-h-mobile md:max-h-desktop overflow-hidden' : 'h-fit'}  after:content-[""] after:w-full after:h-80 after:absolute after:bottom-0 after:z-10 after:bg-gradient-to-t from-brand-400 ...`}>
       <div className='my-0 mx-auto p-4 max-w-screen-2xl flex flex-col gap-11 mb-11'>
         <div className='font-default-font flex flex-col gap-2'>
           <h2 data-aos="fade-right" className=' text-2xl max-w-xs font-extrabold bg-advantagesGradient bg-clip-text text-transparent'>Porquê vale a pena?</h2>
