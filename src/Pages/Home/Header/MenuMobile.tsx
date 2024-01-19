@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import {GrClose} from 'react-icons/gr'
-import logoBlackSvg from "../../../../assets/logo-black.svg"
 
 interface MenuMobileProps {
   modal: boolean;
@@ -32,7 +31,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ modal, setModal })=> {
           <Link href={'/'} className='py-2 px-10 bg-brand-200 text-white-primary rounded-md font-bold uppercase'>Login</Link> 
         </nav>
 
-        <Image src={logoBlackSvg} alt='Logo SwiftStock'/>
+        <Image src="/avatar/logo-black.svg" alt='Logo SwiftStock'/>
       </div>
     </div>
   )

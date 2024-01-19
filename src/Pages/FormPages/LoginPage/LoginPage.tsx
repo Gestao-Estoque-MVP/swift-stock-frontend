@@ -8,12 +8,12 @@ import { useForm } from 'react-hook-form'
 import { TLogin } from '@/interfaces/login.interface'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from '@/schemas/login.schema'
-import FormLayout from '../FormLayout/FormLayout'
 import { useMutation } from '@apollo/client'
 import { LOGIN_MUTATION } from '@/graphql/mutation/mutation'
 import { toast } from 'react-toastify'
 import { setCookie } from 'nookies';
 import { Input } from '@/components/Inputs/Text/Input'
+import FormLayout from '../FormLayout/FormLayout';
 
 
 const LoginPage = () => {
