@@ -6,12 +6,8 @@ import  createUploadLink  from 'apollo-upload-client';
 export const { getClient } = registerApolloClient(() => {
   return new NextSSRApolloClient({
     cache: new NextSSRInMemoryCache(),
-    link: createUploadLink({
-      uri: "http://localhost:8080/graphql",
-      credentials: "include",
-      headers: {
-        'Content-Type': 'application/json',
-      }
+    link: new HttpLink({
+      uri: "https://api.swiftstock.com.br/graphql",
     }),
   });
 });
