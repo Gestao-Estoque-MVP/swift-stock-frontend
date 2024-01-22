@@ -3,33 +3,32 @@
         /* height: 203px; */
         background-color: white;
         
-        
+        width: 320.78px;
         font-size: 18px;
      
 
         border-radius: 14px;
-        width: 100%;
 
 }
 
 
 .card-infor {
-        padding: 16px;
+        padding: 31px;
 }
 
 .count {
-        font-size: 18px;
+        font-size: 38px;
         font-weight: bold;
-        margin-top: 16px;
+        margin-top: 22px;
 }
 
 
 
 .bottom-infor {
         display: flex;
-        padding: 8px 14px;
+        padding: 19px 29px;
         color: white;
-        border-radius: 0px 0px 12px 12px;
+        border-radius: 0px 0px 14px 14px;
 }
 
 .bg-bad {

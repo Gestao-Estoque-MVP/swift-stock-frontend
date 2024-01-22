@@ -1,6 +1,9 @@
-import { NextSSRInMemoryCache, NextSSRApolloClient } from "@apollo/experimental-nextjs-app-support/ssr";
+import { HttpLink } from "@apollo/client";
+import {
+  NextSSRInMemoryCache,
+  NextSSRApolloClient,
+} from "@apollo/experimental-nextjs-app-support/ssr";
 import { registerApolloClient } from "@apollo/experimental-nextjs-app-support/rsc";
-import  createUploadLink  from 'apollo-upload-client';
 
 
 export const { getClient } = registerApolloClient(() => {

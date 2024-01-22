@@ -1,4 +1,5 @@
 import React from 'react';
+
 import style from "./styles.module.css"
 
 
@@ -6,6 +7,8 @@ interface props {
     productCount: number,
     bad: boolean
 }
+
+
 
 const ProductCard = ({ productCount, bad }: props) => {
     return (

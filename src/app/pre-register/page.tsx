@@ -1,5 +1,4 @@
-import PreRegisterPage from "@/Pages/FormPages/PreRegisterPage/PreRegisterPage";
-
+import PreRegisterPage from "@/components/Pages/FormPages/PreRegisterPage/PreRegisterPage";
 
 
 const PreRegister = () => {

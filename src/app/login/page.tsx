@@ -1,13 +1,12 @@
-import LoginPage from "@/Pages/FormPages/LoginPage/LoginPage";
-
+import LoginPage from '@/components/Pages/FormPages/LoginPage/LoginPage';
 
 
 const Login = () => {
-  return (
-    <main>
-     <LoginPage/>
-    </main>
-  )
-}
+    return (
+        <main>
+            <LoginPage/>
+        </main>
+    );
+};
 
 export default Login;

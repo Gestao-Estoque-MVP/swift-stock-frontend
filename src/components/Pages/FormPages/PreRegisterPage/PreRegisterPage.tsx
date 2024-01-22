@@ -1,7 +1,8 @@
 "use client"
 
+import FormPage from "@/components/Pages/FormPages/FormPage/FormPage";
 import FormLayout from "../FormLayout/FormLayout";
-import {Input} from "@/components/Inputs/Text/Input";
+import {Input} from "@/components/Inputs/Input";
 import nookies from "nookies";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,7 +13,6 @@ import { useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { PRE_USER_MUTATION } from "@/graphql/mutation/mutation";
 import { cookies } from "next/dist/client/components/headers";
-import FormPage from "../FormPage/FormPage";
 
 
 const PreRegisterPage = () => {
@@ -52,15 +52,14 @@ const PreRegisterPage = () => {
     }
 
     return(
-        <>
         <FormPage>
             <FormLayout>
                 <form className="flex flex-col gap-5 mb-8" onSubmit={handleSubmit(submitLogin)}>
-                    <Input label="Nome" id="name" type="text" placeholder="Insira o Nome do Usuário" register={register("name")} value={""}/>
+                    <Input label="Nome" id="name" type="text" placeholder="Insira o Nome do Usuário" register={register("name")}/>
                     {
                         errors.name && <small className="-translate-y-4 text-error-200">{errors.name?.message}</small>
                     }
-                    <Input label="email" id="email" type="email" placeholder="Insira o Email do Usuário" register={register("email")} value={""}/>
+                    <Input label="email" id="email" type="email" placeholder="Insira o Email do Usuário" register={register("email")}/>
                     {
                         errors.email && <small className="-translate-y-4 text-error-200">{errors.email.message}</small>
                     }
@@ -69,7 +68,6 @@ const PreRegisterPage = () => {
                 </form>
             </FormLayout>
         </FormPage>
-        </>
     )
 }
 
