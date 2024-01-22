@@ -1,6 +1,6 @@
-import { Table } from "@/components/Table"
+import { Table } from "../../../../my-app/src/components/Table"
 
-import ProductCard from "../../../components/ProductCard"
+import ProductCard from "../../../../my-app/src/components/ProductCard"
 
 const Products = () => {
 

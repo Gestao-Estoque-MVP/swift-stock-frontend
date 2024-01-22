@@ -9,10 +9,10 @@ import { TLogin } from '@/interfaces/login.interface'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from '@/schemas/login.schema'
 import { useMutation } from '@apollo/client'
-import { LOGIN_MUTATION } from '@/graphql/mutation/mutation'
+import { LOGIN_MUTATION } from '../../../../my-app/src/graphql/mutation/mutation'
 import { toast } from 'react-toastify'
 import { setCookie } from 'nookies';
-import { Input } from '@/components/Inputs/Text/Input'
+import { Input } from '../../../../my-app/src/components/Inputs/Text/Input'
 import FormLayout from '../FormLayout/FormLayout';
 
 

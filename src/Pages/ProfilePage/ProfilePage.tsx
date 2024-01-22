@@ -1,16 +1,16 @@
 "use client"
 
 import { ChangeEvent, useEffect, useState } from "react";
-import { Input } from "@/components/Inputs/Text/Input";
+import { Input } from "../../../my-app/src/components/Inputs/Text/Input";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 import { useMutation, useQuery } from "@apollo/client";
-import { GET_USER } from "@/graphql/query/user";
+import { GET_USER } from "../../../my-app/src/graphql/query/user";
 import nookies from 'nookies';
-import ImageUpload from "@/components/UploadImage";
-import Plan from "@/components/ProfileInformation/Plan";
-import { InputPhone } from "@/components/Inputs/Phone";
-import { LoadingScreen } from "@/components/Loading/input";
+import ImageUpload from "../../../my-app/src/components/UploadImage";
+import Plan from "../../../my-app/src/components/ProfileInformation/Plan";
+import { InputPhone } from "../../../my-app/src/components/Inputs/Phone";
+import { LoadingScreen } from "../../../my-app/src/components/Loading/input";
 import calendario from '../../assets/calendário.svg'
 import Image from "next/image";
 

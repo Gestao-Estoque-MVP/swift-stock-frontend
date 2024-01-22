@@ -2,14 +2,14 @@
 
 import FormPage from "@/components/Pages/FormPages/FormPage/FormPage";
 import FormLayout from "../FormLayout/FormLayout";
-import {Input, SelectInput} from "@/components/Inputs/Text/Input";
+import {Input, SelectInput} from "../../../../my-app/src/components/Inputs/Text/Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/schemas/register.schema";
 import { TRegister } from "@/interfaces/register.interface";
 import { useParams, useRouter } from "next/navigation";
 import { useMutation } from "@apollo/client";
-import { REGISTER_TOKEN_MUTATION } from "@/graphql/mutation/mutation";
+import { REGISTER_TOKEN_MUTATION } from "../../../../my-app/src/graphql/mutation/mutation";
 import { useEffect } from "react";
 
 

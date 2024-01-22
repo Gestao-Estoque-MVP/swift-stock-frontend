@@ -1,7 +1,7 @@
 "use client"
 
 import FormLayout from "../FormLayout/FormLayout";
-import {Input} from "@/components/Inputs/Text/Input";
+import {Input} from "../../../../my-app/src/components/Inputs/Text/Input";
 import nookies from "nookies";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { TPreRegister } from "@/interfaces/pre-register.interface";
 import { useEffect } from "react";
 import { useMutation } from "@apollo/client";
-import { PRE_USER_MUTATION } from "@/graphql/mutation/mutation";
+import { PRE_USER_MUTATION } from "../../../../my-app/src/graphql/mutation/mutation";
 import { cookies } from "next/dist/client/components/headers";
 import FormPage from "../FormPage/FormPage";
 

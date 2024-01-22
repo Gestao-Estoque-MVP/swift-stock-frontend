@@ -1,11 +1,11 @@
-import { ApolloWrapper } from "@/components/ApolloProvider/ApolloProvider";
+import { ApolloWrapper } from "../../my-app/src/components/ApolloProvider/ApolloProvider";
 import "./globals.css";
 import type { Metadata } from 'next';
-import ToastContainerComponent from "@/components/ToastContainer/ToastContainer";
+import ToastContainerComponent from "../../my-app/src/components/ToastContainer/ToastContainer";
 import 'aos/dist/aos.css';
-import AosContainer from "@/components/AOS/Aos";
+import AosContainer from "../../my-app/src/components/AOS/Aos";
 import logoIcon from "../assets/logoIcon.png";
-import MenuLayout from "@/components/MenuLayout/MenuLayout";
+import MenuLayout from "../../my-app/src/components/MenuLayout/MenuLayout";
 
 
 export const metadata: Metadata = {
