@@ -52,7 +52,7 @@ const ImageUpload = () => {
                 setMessage(response.data.data.updateImage.message);
             }
         } catch (error) {
-            setMessage('Erro na requisição: ' + error.message);
+            setMessage('Erro na requisição');
         }
     };
 
