@@ -1,5 +1,6 @@
+import { IInputProps } from "../Text/Input";
 
-export const InputPhone = ({ id, label, onChange, placeholder, register, value }: any) => {
+export const InputPhone = ({ id, label, onChange, placeholder, register, value }: IInputProps) => {
     const maskPhone = (phone: string) => {
         const numbers = phone.replace(/\D/g, '');
         if (numbers.length <= 10) {

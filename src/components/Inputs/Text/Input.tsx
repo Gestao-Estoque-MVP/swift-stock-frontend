@@ -3,11 +3,12 @@
 import React, { useState } from 'react';
 import { PiEyeBold, PiEyeSlashBold } from 'react-icons/pi';
 
-interface IInputProps {
+export interface IInputProps {
     label: string;
     id: string;
     type?: string;
     placeholder?: string;
+    children?: React.ReactNode;
     register?: any;
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
