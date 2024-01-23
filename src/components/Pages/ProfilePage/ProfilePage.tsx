@@ -1,7 +1,6 @@
 'use client';
 
 import { ChangeEvent, useEffect, useState } from 'react';
-import PhoneInput from 'react-phone-number-input';
 import { useMutation, useQuery } from '@apollo/client';
 
 import nookies from 'nookies';
