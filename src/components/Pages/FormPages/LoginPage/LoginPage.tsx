@@ -13,9 +13,13 @@ import { LOGIN_MUTATION } from '@/graphql/mutation/mutation';
 import { toast } from 'react-toastify';
 import { setCookie } from 'nookies';
 import { Input } from '@/components/Inputs/Text/Input';
+import { useRouter } from 'next/navigation';
 
 
 const LoginPage = () => {
+
+    const router = useRouter();
+
     const {
         register,
         handleSubmit,
@@ -41,7 +45,7 @@ const LoginPage = () => {
                     maxAge: 30 * 24 * 60 * 60,
                     path: '/', 
                 });
-
+                router.push('/dashboard');
                 return toast.success('Login feito com sucesso!');
             }
         }catch(error: unknown) {
