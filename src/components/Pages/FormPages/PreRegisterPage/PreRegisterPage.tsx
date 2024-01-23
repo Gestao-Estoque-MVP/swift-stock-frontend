@@ -1,18 +1,18 @@
-"use client"
+'use client';
 
-import FormPage from "@/components/Pages/FormPages/FormPage/FormPage";
-import FormLayout from "../FormLayout/FormLayout";
-import {Input} from "@/components/Inputs/Input";
-import nookies from "nookies";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { preRegisterSchema } from "@/schemas/pre-register.schema";
-import { useRouter } from "next/navigation";
-import { TPreRegister } from "@/interfaces/pre-register.interface";
-import { useEffect } from "react";
-import { useMutation } from "@apollo/client";
-import { PRE_USER_MUTATION } from "@/graphql/mutation/mutation";
-import { cookies } from "next/dist/client/components/headers";
+import FormPage from '@/components/Pages/FormPages/FormPage/FormPage';
+import FormLayout from '../FormLayout/FormLayout';
+import nookies from 'nookies';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { preRegisterSchema } from '@/schemas/pre-register.schema';
+import { useRouter } from 'next/navigation';
+import { TPreRegister } from '@/interfaces/pre-register.interface';
+import { useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+import { PRE_USER_MUTATION } from '@/graphql/mutation/mutation';
+import { cookies } from 'next/dist/client/components/headers';
+import { Input } from '@/components/Inputs/Text/Input';
 
 
 const PreRegisterPage = () => {
@@ -26,9 +26,9 @@ const PreRegisterPage = () => {
     });
     
 
-    const userToken = nookies.get()["@swift-stock: user-token"];
+    const userToken = nookies.get()['@swift-stock: user-token'];
     
-    const [createPreUser] = useMutation(PRE_USER_MUTATION)
+    const [createPreUser] = useMutation(PRE_USER_MUTATION);
 
     const submitLogin = async(data: TPreRegister) => {
         try{
@@ -36,30 +36,29 @@ const PreRegisterPage = () => {
                 variables: {
                     name: data.name,
                     email: data.email,
-                    status: "pre-users"
+                    status: 'pre-users'
                 },
                 context: {
                     headers: {
                         Authorization: `Bearer ${userToken}`
                     }
                 }
-            }) 
+            }); 
 
-            console.log(res)
-        }catch(err){
-            console.log(err)
+        } catch (err) {
+            throw new Error(err);
         }
-    }
+    };
 
     return(
         <FormPage>
             <FormLayout>
                 <form className="flex flex-col gap-5 mb-8" onSubmit={handleSubmit(submitLogin)}>
-                    <Input label="Nome" id="name" type="text" placeholder="Insira o Nome do Usuário" register={register("name")}/>
+                    <Input label="Nome" id="name" type="text" placeholder="Insira o Nome do Usuário" register={register('name')}/>
                     {
                         errors.name && <small className="-translate-y-4 text-error-200">{errors.name?.message}</small>
                     }
-                    <Input label="email" id="email" type="email" placeholder="Insira o Email do Usuário" register={register("email")}/>
+                    <Input label="email" id="email" type="email" placeholder="Insira o Email do Usuário" register={register('email')}/>
                     {
                         errors.email && <small className="-translate-y-4 text-error-200">{errors.email.message}</small>
                     }
@@ -68,7 +67,7 @@ const PreRegisterPage = () => {
                 </form>
             </FormLayout>
         </FormPage>
-    )
-}
+    );
+};
 
 export default PreRegisterPage;
