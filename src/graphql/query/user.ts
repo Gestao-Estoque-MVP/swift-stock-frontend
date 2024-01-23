@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const GET_USER = gql`
     {
@@ -8,13 +8,13 @@ export const GET_USER = gql`
             email
             createdAt
             updatedAt
-            user_phone{
+            user_phone {
                 number
             }
-            role{
+            role {
                 name
             }
-            image{
+            image {
                 url
             }
         }

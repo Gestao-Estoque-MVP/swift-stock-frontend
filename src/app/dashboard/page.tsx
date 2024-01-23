@@ -1,11 +1,9 @@
-'use client'
-import Layout from "@/components/Layout/input";
-import Products from "./products/page";
+'use client';
+import Layout from '@/components/Layout/input';
+import Products from './products/page';
 import { useState } from 'react';
 
-
 const DashboardPage = () => {
-    
     const [activeContent, setActiveContent] = useState('');
     const renderContent = () => {
         switch (activeContent) {
@@ -17,12 +15,8 @@ const DashboardPage = () => {
                 return <></>;
         }
     };
-    
-    return (
-        <Layout onMenuClick={setActiveContent}>
-            {renderContent()}
-        </Layout>
-    )
-}
-  
-export default DashboardPage
+
+    return <Layout onMenuClick={setActiveContent}>{renderContent()}</Layout>;
+};
+
+export default DashboardPage;

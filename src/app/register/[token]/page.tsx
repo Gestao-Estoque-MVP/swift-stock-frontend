@@ -1,11 +1,11 @@
-import RegisterPage from "@/components/Pages/FormPages/RegisterPage/RegisterPage";
+import RegisterPage from '@/components/Pages/FormPages/RegisterPage/RegisterPage';
 
 const Register = () => {
-    return(
+    return (
         <main>
-            <RegisterPage/>
+            <RegisterPage />
         </main>
-    )
-}
+    );
+};
 
 export default Register;

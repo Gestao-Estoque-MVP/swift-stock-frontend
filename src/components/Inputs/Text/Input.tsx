@@ -1,17 +1,16 @@
 'use client';
 
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { PiEyeBold, PiEyeSlashBold } from 'react-icons/pi';
 
-
 interface IInputProps {
-  label: string;
-  id: string;
-  type?: string;
-  placeholder?: string;
-  register?: any;
-  value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    label: string;
+    id: string;
+    type?: string;
+    placeholder?: string;
+    register?: any;
+    value?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input = ({ label, id, type, placeholder, value, onChange }: IInputProps) => {
@@ -22,25 +21,38 @@ export const Input = ({ label, id, type, placeholder, value, onChange }: IInputP
     };
 
     return (
-        <div className='flex flex-col gap-2'>
-            <label className='font-default-font text-sm uppercase font-semibold text-grey-100' htmlFor={id}>{label}</label>
-            <div className='relative flex items-center border-[3px] border-brand-200 rounded-lg bg-grey-50 p-3 transition-all duration-200'>
-                <input 
+        <div className="flex flex-col gap-2">
+            <label
+                className="font-default-font text-sm uppercase font-semibold text-grey-100"
+                htmlFor={id}
+            >
+                {label}
+            </label>
+            <div className="relative flex items-center border-[3px] border-brand-200 rounded-lg bg-grey-50 p-3 transition-all duration-200">
+                <input
                     placeholder={placeholder}
-                    className='w-full py-1 bg-transparent outline-none focus:ring-0 focus:border-transparent'
-                    type={inputType} 
-                    id={id} 
+                    className="w-full py-1 bg-transparent outline-none focus:ring-0 focus:border-transparent"
+                    type={inputType}
+                    id={id}
                     name={id}
                     value={value}
                     onChange={onChange}
                 />
                 {type === 'password' && (
                     <button type="button" onClick={handlePasswordType}>
-                        {inputType === 'password' ? 
-                            <PiEyeBold className={'scale-125 hover:text-brand-200 hover:cursor-pointer text-brand-300'}/> 
-                            :
-                            <PiEyeSlashBold className={'scale-125 hover:text-brand-200 hover:cursor-pointer text-grey-200'}/> 
-                        }
+                        {inputType === 'password' ? (
+                            <PiEyeBold
+                                className={
+                                    'scale-125 hover:text-brand-200 hover:cursor-pointer text-brand-300'
+                                }
+                            />
+                        ) : (
+                            <PiEyeSlashBold
+                                className={
+                                    'scale-125 hover:text-brand-200 hover:cursor-pointer text-grey-200'
+                                }
+                            />
+                        )}
                     </button>
                 )}
             </div>
@@ -48,19 +60,37 @@ export const Input = ({ label, id, type, placeholder, value, onChange }: IInputP
     );
 };
 
-
-
-export const SelectInput = ({ label, id, register, children, placeholder, ...props }: IInputProps) => {
+export const SelectInput = ({
+    label,
+    id,
+    register,
+    children,
+    placeholder,
+    ...props
+}: IInputProps) => {
     return (
-        <div className='flex flex-col gap-2'>
-            <label className='font-default-font text-sm uppercase font-semibold text-grey-100' htmlFor={id}>{label}</label>
-            <div className='rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
-      hover:border-brand-200 hover:border-solid border-[3px]'>
-                <select placeholder={placeholder} className='w-full py-4 bg-transparent outline-0'id={id} name={id} {...register} {...props}>
+        <div className="flex flex-col gap-2">
+            <label
+                className="font-default-font text-sm uppercase font-semibold text-grey-100"
+                htmlFor={id}
+            >
+                {label}
+            </label>
+            <div
+                className="rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
+      hover:border-brand-200 hover:border-solid border-[3px]"
+            >
+                <select
+                    placeholder={placeholder}
+                    className="w-full py-4 bg-transparent outline-0"
+                    id={id}
+                    name={id}
+                    {...register}
+                    {...props}
+                >
                     {children}
                 </select>
             </div>
         </div>
     );
 };
-

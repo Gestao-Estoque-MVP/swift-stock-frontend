@@ -16,21 +16,17 @@ function makeClient() {
     return new NextSSRApolloClient({
         cache: new NextSSRInMemoryCache(),
         link:
-      typeof window === 'undefined'
-          ? ApolloLink.from([
-              new SSRMultipartLink({
-                  stripDefer: true,
-              }),
-              httpLink,
-          ])
-          : httpLink,
+            typeof window === 'undefined'
+                ? ApolloLink.from([
+                      new SSRMultipartLink({
+                          stripDefer: true,
+                      }),
+                      httpLink,
+                  ])
+                : httpLink,
     });
 }
 
 export function ApolloWrapper({ children }: React.PropsWithChildren) {
-    return (
-        <ApolloNextAppProvider makeClient={makeClient}>
-            {children}
-        </ApolloNextAppProvider>
-    );
+    return <ApolloNextAppProvider makeClient={makeClient}>{children}</ApolloNextAppProvider>;
 }

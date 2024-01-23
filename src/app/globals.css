@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
     scroll-behavior: smooth !important;
 }
 
-body{
+body {
     overflow-x: hidden;
 }

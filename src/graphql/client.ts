@@ -6,7 +6,6 @@ import { registerApolloClient } from '@apollo/experimental-nextjs-app-support/rs
 
 import { HttpLink } from '@apollo/client';
 
-
 export const { getClient } = registerApolloClient(() => {
     return new NextSSRApolloClient({
         cache: new NextSSRInMemoryCache(),
@@ -15,7 +14,7 @@ export const { getClient } = registerApolloClient(() => {
             credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
-            }
+            },
         }),
     });
 });

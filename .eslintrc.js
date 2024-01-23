@@ -4,12 +4,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'next',
-  ],
-  plugins: ['@typescript-eslint'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'next'],
+  plugins: ['@typescript-eslint', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -20,8 +16,9 @@ module.exports = {
   },
   rules: {
     quotes: [2, 'single', { avoidEscape: true }],
-    indent: [2, 4],
     semi: [2, 'always'],
     'no-console': 2,
+    // Adicione esta regra para que o ESLint respeite as configurações do Prettier
+    'prettier/prettier': 'error',
   },
 };

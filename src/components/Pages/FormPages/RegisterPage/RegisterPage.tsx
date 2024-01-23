@@ -12,73 +12,110 @@ import { REGISTER_TOKEN_MUTATION } from '@/graphql/mutation/mutation';
 import { useEffect } from 'react';
 import { Input, SelectInput } from '@/components/Inputs/Text/Input';
 
-
 const RegisterPage = () => {
-
     const router = useParams();
 
     const { token } = router;
 
     const [verifyToken] = useMutation(REGISTER_TOKEN_MUTATION);
     useEffect(() => {
-        const ensureTokenExists = async() => {
-            try{
+        const ensureTokenExists = async () => {
+            try {
                 const res = await verifyToken({
-                    variables:{
-                        token: token
-                    }
+                    variables: {
+                        token: token,
+                    },
                 });
-        
+
                 console.log(res);
-            }catch(err) {
+            } catch (err) {
                 console.log(err);
             }
         };
         ensureTokenExists();
     }, []);
- 
+
     const {
         register,
         handleSubmit,
         reset,
-        formState: {errors}
+        formState: { errors },
     } = useForm<TRegister>({
-        resolver: zodResolver(registerSchema)
+        resolver: zodResolver(registerSchema),
     });
-    
+
     const submitLogin = (data: TRegister) => {
         console.log(data);
     };
 
-    return(
+    return (
         <FormPage>
             <FormLayout title="Olá, Nome do Usuário!">
                 <form className="flex flex-col gap-5 mb-8" onSubmit={handleSubmit(submitLogin)}>
-                    <Input label="Telefone" id="name" type="text" placeholder="Insira o Número de Telefonea" register={register('phone')}/>
-                    {
-                        errors.phone && <small className="-translate-y-4 text-error-200">{errors.phone.message}</small>
-                    }
+                    <Input
+                        label="Telefone"
+                        id="name"
+                        type="text"
+                        placeholder="Insira o Número de Telefonea"
+                        register={register('phone')}
+                    />
+                    {errors.phone && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors.phone.message}
+                        </small>
+                    )}
                     {/* <SelectInput  placeholder="Escolha o documento a ser informado" label="Documento" id="document" register={register('document_type')}>
                         <option value="cnpj">CNPJ</option>
                         <option value="cpf">CPF</option>
                         <option value="rg">RG</option>
                     </SelectInput> */}
-                    {
-                        errors['document_type'] && <small className="-translate-y-4 text-error-200">{errors['document_type'].message}</small>
-                    }
-                    <Input label="Número do Documento" id="name" type="select" placeholder="Insira o Número do documento" register={register('document_number')}/>
-                    {
-                        errors['document_number'] && <small className="-translate-y-4 text-error-200">{errors['document_number'].message}</small>
-                    }
-                    <Input label="Senha" id="email" type="password" placeholder="Insira sua Senha" register={register('password')}/>
-                    {
-                        errors.password && <small className="-translate-y-4 text-error-200">{errors.password.message}</small>
-                    }
-                    <Input label="Confirmação de Senha" id="password-confirm" type="password" placeholder="Confirme sua Senha" register={register('confirmPassword')}/>
-                    {
-                        errors.confirmPassword && <small className="-translate-y-4 text-error-200">{errors.confirmPassword.message}</small>
-                    }
-                    <button className='py-4 rounded-lg uppercase font-default-font text-center text-base text-white-primary font-bold bg-brand-200' type="submit">Cadastrar</button>
+                    {errors['document_type'] && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors['document_type'].message}
+                        </small>
+                    )}
+                    <Input
+                        label="Número do Documento"
+                        id="name"
+                        type="select"
+                        placeholder="Insira o Número do documento"
+                        register={register('document_number')}
+                    />
+                    {errors['document_number'] && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors['document_number'].message}
+                        </small>
+                    )}
+                    <Input
+                        label="Senha"
+                        id="email"
+                        type="password"
+                        placeholder="Insira sua Senha"
+                        register={register('password')}
+                    />
+                    {errors.password && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors.password.message}
+                        </small>
+                    )}
+                    <Input
+                        label="Confirmação de Senha"
+                        id="password-confirm"
+                        type="password"
+                        placeholder="Confirme sua Senha"
+                        register={register('confirmPassword')}
+                    />
+                    {errors.confirmPassword && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors.confirmPassword.message}
+                        </small>
+                    )}
+                    <button
+                        className="py-4 rounded-lg uppercase font-default-font text-center text-base text-white-primary font-bold bg-brand-200"
+                        type="submit"
+                    >
+                        Cadastrar
+                    </button>
                 </form>
             </FormLayout>
         </FormPage>

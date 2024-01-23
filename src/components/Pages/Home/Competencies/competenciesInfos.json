@@ -1,47 +1,47 @@
 [
-  {
-    "title": "Empoderamento",
-    "description": "Desvende a simplicidade por trás da complexidade com o nosso sistema, que fortalece a sua capacidade de gerir o seu negócio de forma eficiente. Esteja à frente dos desafios e navegue com confiança rumo ao crescimento do seu negócio.",
-    "id": 1
-  },
-  {
-    "title": "Tempo",
-    "description": "Nosso sistema, como um relógio suíço, economiza seu tempo valioso, liberando espaço para o que é importante - crescimento do seu negócio e experiência do cliente.",
-    "id": 2
-  },
-  {
-    "title": "Liberdade",
-    "description": "Liberte-se das amarras do gerenciamento de estoque. Com nosso sistema ao seu lado, você ganha a liberdade para se concentrar nos aspectos criativos e estratégicos do seu negócio, ou até mesmo para desfrutar de momentos preciosos de tempo livre.",
-    "id": 3
-  },
-  {
-    "title": "Melhoria Contínua",
-    "description": "O sistema fornece feedback e sugestões para melhorar o desempenho e a eficiência do gerenciamento de estoque, baseados em dados e indicadores.",
-    "id": 4
-  },
-  {
-    "title": "Gerenciamento Simplificado",
-    "description": "O sistema facilita a organização e o controle de estoques, tornando a gestão de produtos eficiente e fácil de entender. Você pode categorizar, filtrar, buscar e editar os produtos em estoque com poucos cliques, além de visualizar o histórico de movimentações.",
-    "id": 5
-  },
-  {
-    "title": "Alertas de Estoque",
-    "description": "Os usuários serão notificados quando os níveis de estoque estiverem baixos, ajudando-os a evitar a falta de produtos. Você pode definir os limites mínimos de estoque para cada produto, e receber alertas quando eles forem atingidos.",
-    "id": 6
-  },
-  {
-    "title": "Gestão de Variações de Produto",
-    "description": "Com suporte para gerenciamento de variações de produto, os usuários podem acompanhar diferentes versões do mesmo produto com facilidade. Você pode criar variações por cor, tamanho, modelo, e controlar o estoque de cada uma delas.",
-    "id": 7
-  },
-  {
-    "title": "Interface Intuitiva",
-    "description": "Uma interface de usuário amigável e fácil de navegar, tornando o processo de gerenciamento de estoque acessível. Você pode usar o sistema em qualquer dispositivo com acesso à internet, seja um computador, tablet ou smartphone",
-    "id": 8
-  },
-  {
-    "title": "Inteligência de Negócios",
-    "description": "Impulsione sua tomada de decisão com insights poderosos. Nosso sistema transforma dados brutos de estoque em informações valiosas, permitindo ações estratégicas com base em tendências e padrões",
-    "id": 9
-  }
+    {
+        "title": "Empoderamento",
+        "description": "Desvende a simplicidade por trás da complexidade com o nosso sistema, que fortalece a sua capacidade de gerir o seu negócio de forma eficiente. Esteja à frente dos desafios e navegue com confiança rumo ao crescimento do seu negócio.",
+        "id": 1
+    },
+    {
+        "title": "Tempo",
+        "description": "Nosso sistema, como um relógio suíço, economiza seu tempo valioso, liberando espaço para o que é importante - crescimento do seu negócio e experiência do cliente.",
+        "id": 2
+    },
+    {
+        "title": "Liberdade",
+        "description": "Liberte-se das amarras do gerenciamento de estoque. Com nosso sistema ao seu lado, você ganha a liberdade para se concentrar nos aspectos criativos e estratégicos do seu negócio, ou até mesmo para desfrutar de momentos preciosos de tempo livre.",
+        "id": 3
+    },
+    {
+        "title": "Melhoria Contínua",
+        "description": "O sistema fornece feedback e sugestões para melhorar o desempenho e a eficiência do gerenciamento de estoque, baseados em dados e indicadores.",
+        "id": 4
+    },
+    {
+        "title": "Gerenciamento Simplificado",
+        "description": "O sistema facilita a organização e o controle de estoques, tornando a gestão de produtos eficiente e fácil de entender. Você pode categorizar, filtrar, buscar e editar os produtos em estoque com poucos cliques, além de visualizar o histórico de movimentações.",
+        "id": 5
+    },
+    {
+        "title": "Alertas de Estoque",
+        "description": "Os usuários serão notificados quando os níveis de estoque estiverem baixos, ajudando-os a evitar a falta de produtos. Você pode definir os limites mínimos de estoque para cada produto, e receber alertas quando eles forem atingidos.",
+        "id": 6
+    },
+    {
+        "title": "Gestão de Variações de Produto",
+        "description": "Com suporte para gerenciamento de variações de produto, os usuários podem acompanhar diferentes versões do mesmo produto com facilidade. Você pode criar variações por cor, tamanho, modelo, e controlar o estoque de cada uma delas.",
+        "id": 7
+    },
+    {
+        "title": "Interface Intuitiva",
+        "description": "Uma interface de usuário amigável e fácil de navegar, tornando o processo de gerenciamento de estoque acessível. Você pode usar o sistema em qualquer dispositivo com acesso à internet, seja um computador, tablet ou smartphone",
+        "id": 8
+    },
+    {
+        "title": "Inteligência de Negócios",
+        "description": "Impulsione sua tomada de decisão com insights poderosos. Nosso sistema transforma dados brutos de estoque em informações valiosas, permitindo ações estratégicas com base em tendências e padrões",
+        "id": 9
+    }
 ]

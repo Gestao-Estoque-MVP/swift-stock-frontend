@@ -1,31 +1,30 @@
-import { Table } from "@/components/Table"
+import { Table } from '@/components/Table';
 
-import ProductCard from "../../../components/ProductCard"
+import ProductCard from '../../../components/ProductCard';
 
 const Products = () => {
-
-
-    const itens = []
+    const itens = [];
 
     for (let i = 1; i <= 100; i++) {
-
-        let item = {
-            name: "Item Name " + i, 
-            imageUrl: "https://avatars.githubusercontent.com/u/139462945?s=200&v=4" ,
+        const item = {
+            name: 'Item Name ' + i,
+            imageUrl: 'https://avatars.githubusercontent.com/u/139462945?s=200&v=4',
             categoria: `Acessório ${i}`,
-            entrada: "10/07/2023",
+            entrada: '10/07/2023',
             sku: `0000${i % 9}`,
             qtd: i * 100,
             stock: i * 10,
-            estoque: "completo"
+            estoque: 'completo',
+        };
+        if (i == 2) {
+            item.estoque = 'vazio';
         }
-        if ( i == 2 ){item.estoque="vazio"};
-        if ( i == 5 ){item.estoque="baixo"};
+        if (i == 5) {
+            item.estoque = 'baixo';
+        }
 
         itens.push(item);
     }
-
-
 
     return (
         <>
@@ -36,18 +35,14 @@ const Products = () => {
                     <ProductCard productCount={4000} bad={true} />
                     <ProductCard productCount={100} bad={true} />
                     <ProductCard productCount={2000} bad={false} />
-
                 </div>
 
                 <div className="mt-[38px]">
-                    <Table itens={itens} state={""} />
+                    <Table itens={itens} state={''} />
                 </div>
             </div>
-
-
-
         </>
-    )
-}
+    );
+};
 
-export default Products
+export default Products;
