@@ -10,7 +10,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children, onMenuClick }) => {
     return (
         <div className="flex">
-            <SideBar onMenuClick={onMenuClick} />
+            <SideBar />
             <main className="flex-grow">{children}</main>
         </div>
     );
