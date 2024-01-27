@@ -22,24 +22,41 @@ export const Input = ({ label, id, type, placeholder, register, ...props }: IInp
     };
 
     return (
-        <div className='flex flex-col gap-2'>
-            <label className='font-default-font text-sm uppercase font-semibold text-grey-100' htmlFor={id}>{label}</label>
-            <div className='rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
-      hover:border-brand-200 hover:border-solid border-[3px]'>
-                <input placeholder={placeholder} className='w-full py-4 bg-transparent outline-0'
-                    type={inputType} id={id} name={id}
-                    {...register} {...props}
+        <div className="flex flex-col gap-2">
+            <label
+                className="font-default-font text-sm uppercase font-semibold text-grey-100"
+                htmlFor={id}
+            >
+                {label}
+            </label>
+            <div
+                className="rounded-lg bg-grey-50 px-3 flex items-center border-grey-50 hover:border-1 transition-all duration-200
+      hover:border-brand-200 hover:border-solid border-[3px]"
+            >
+                <input
+                    placeholder={placeholder}
+                    className="w-full py-4 bg-transparent outline-0"
+                    type={inputType}
+                    id={id}
+                    name={id}
+                    {...register}
+                    {...props}
                 />
                 <button type="button" onClick={handlePasswordType}>
-                    {
-                        type === 'password' &&
-            (
-                inputType === 'password' ?
-                    <PiEyeBold className={'scale-125 hover:text-brand-200 hover:cursor-pointer text-brand-300'}/> 
-                    :
-                    <PiEyeSlashBold className={'scale-125 hover:text-brand-200 hover:cursor-pointer text-grey-200'}/> 
-            )
-                    }
+                    {type === 'password' &&
+                        (inputType === 'password' ? (
+                            <PiEyeBold
+                                className={
+                                    'scale-125 hover:text-brand-200 hover:cursor-pointer text-brand-300'
+                                }
+                            />
+                        ) : (
+                            <PiEyeSlashBold
+                                className={
+                                    'scale-125 hover:text-brand-200 hover:cursor-pointer text-grey-200'
+                                }
+                            />
+                        ))}
                 </button>
             </div>
         </div>

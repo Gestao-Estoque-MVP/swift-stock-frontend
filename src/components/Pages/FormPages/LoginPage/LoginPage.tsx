@@ -15,40 +15,38 @@ import { setCookie } from 'nookies';
 import { Input } from '@/components/Inputs/Text/Input';
 import { useRouter } from 'next/navigation';
 
-
 const LoginPage = () => {
-
     const router = useRouter();
 
     const {
         register,
         handleSubmit,
         reset,
-        formState: {errors}
+        formState: { errors },
     } = useForm<TLogin>({
-        resolver: zodResolver(loginSchema)
+        resolver: zodResolver(loginSchema),
     });
 
     const [login] = useMutation(LOGIN_MUTATION);
 
-    const submitLogin = async(data: TLogin) => {
-        try{
+    const submitLogin = async (data: TLogin) => {
+        try {
             const res = await login({
                 variables: {
                     email: data.email,
-                    password: data.password
-                }
+                    password: data.password,
+                },
             });
 
-            if(res.data?.login){
+            if (res.data?.login) {
                 setCookie(null, '@swift-stock: user-token', res.data.login.token, {
                     maxAge: 30 * 24 * 60 * 60,
-                    path: '/', 
+                    path: '/',
                 });
                 router.push('/dashboard');
                 return toast.success('Login feito com sucesso!');
             }
-        }catch(error: unknown) {
+        } catch (error: unknown) {
             return toast.error('Email ou Senha incorretos');
         }
     };
@@ -56,22 +54,50 @@ const LoginPage = () => {
     return (
         <FormPage>
             <FormLayout>
-                <form className='flex flex-col gap-5 mb-8' onSubmit={handleSubmit(submitLogin)}>
-                    <Input type='text' id='email' label='E-mail' placeholder='Insira seu Email' register={register('email')}/>
-                    {
-                        errors.email && <small className="-translate-y-4 text-error-200">{errors.email.message}</small>
-                    }
-                    <Input type='password' id='email' placeholder='Insira sua Senha' label='Password'  register={register('password')} />
-                    {
-                        errors.password && <small className="-translate-y-4 text-error-200">{errors.password.message}</small>
-                    }
+                <form className="flex flex-col gap-5 mb-8" onSubmit={handleSubmit(submitLogin)}>
+                    <Input
+                        type="text"
+                        id="email"
+                        label="E-mail"
+                        placeholder="Insira seu Email"
+                        register={register('email')}
+                    />
+                    {errors.email && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors.email.message}
+                        </small>
+                    )}
+                    <Input
+                        type="password"
+                        id="email"
+                        placeholder="Insira sua Senha"
+                        label="Password"
+                        register={register('password')}
+                    />
+                    {errors.password && (
+                        <small className="-translate-y-4 text-error-200">
+                            {errors.password.message}
+                        </small>
+                    )}
 
-                    <button className='py-4 rounded-lg uppercase font-default-font text-center text-base text-white-primary font-bold bg-brand-200'>Acessar</button>
-                    <Link className='text-xs text-right underline text-brand-100 font-semibold font-default-font' href={'#'}>Esqueci minha senha</Link>
+                    <button className="py-4 rounded-lg uppercase font-default-font text-center text-base text-white-primary font-bold bg-brand-200">
+                        Acessar
+                    </button>
+                    <Link
+                        className="text-xs text-right underline text-brand-100 font-semibold font-default-font"
+                        href={'#'}
+                    >
+                        Esqueci minha senha
+                    </Link>
                 </form>
 
-                <footer className='flex justify-center '>
-                    <Link href={'#'} className='py-4 rounded-lg w-full bg-brand-50 text-brand-100 uppercase text-center font-default-font font-bold'>Criar conta</Link>
+                <footer className="flex justify-center ">
+                    <Link
+                        href={'#'}
+                        className="py-4 rounded-lg w-full bg-brand-50 text-brand-100 uppercase text-center font-default-font font-bold"
+                    >
+                        Criar conta
+                    </Link>
                 </footer>
             </FormLayout>
         </FormPage>

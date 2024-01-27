@@ -1,4 +1,4 @@
-import { IInputProps } from "../Text/Input";
+import { IInputProps } from '../Text/Input';
 
 export const InputPhone = ({ id, label, onChange, placeholder, register, value }: IInputProps) => {
     const maskPhone = (phone: string) => {
